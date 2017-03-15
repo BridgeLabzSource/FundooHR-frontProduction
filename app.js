@@ -35,12 +35,6 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
                 skipIfLoggedIn: skipIfLoggedIn //skips login
             }
         })
-        /** Logout state */
-        .state('logout', {
-            url: '/logout',
-            template: null,
-            controller: 'LogoutCtrl'
-        })
         /** Home state */
         .state('home', {
             url: '/',
@@ -69,7 +63,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         })
         .state('home.engineer.attendance', {
-            url: 'attendance',
+            url: '/attendance',
             templateUrl: 'templates/attendance.html',
             controller: 'attendanceCtrl',
             resolve: {
@@ -77,7 +71,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         })
         .state('home.engineer.personal', {
-            url: 'personal',
+            url: '/personal',
             templateUrl: 'templates/personal.html',
             controller: 'personalCtrl',
             resolve: {
@@ -85,7 +79,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         })
         .state('home.engineer.profile', {
-            url: 'profile',
+            url: '/profile',
             templateUrl: 'templates/profile.html',
             controller: 'profileCtrl',
             resolve: {
@@ -93,7 +87,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         })
         .state('home.engineer.hrData', {
-            url: 'HRData',
+            url: '/HRData',
             templateUrl: 'templates/hrData.html',
             controller: 'hrDataCtrl',
             resolve: {
@@ -101,7 +95,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         })
         .state('home.engineer.bank', {
-            url: 'bank',
+            url: '/bank',
             templateUrl: 'templates/bank.html',
             controller: 'bankCtrl',
             resolve: {
@@ -109,7 +103,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         })
         .state('home.engineer.tracking', {
-            url: 'tracking',
+            url: '/tracking',
             templateUrl: 'templates/tracking.html',
             controller: 'trackingCtrl',
             resolve: {
@@ -117,4 +111,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         });
 
-}); //end of config
+}).run(function($rootScope, $state) {
+      $rootScope.$state = $state;
+    });
+     //end of config

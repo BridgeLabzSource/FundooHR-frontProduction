@@ -1,8 +1,5 @@
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-
-
-
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="navbar-toggle">
@@ -15,9 +12,7 @@
         <span>FundooHR </span>
         </img>
       </div>
-
     </div>
-
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -31,18 +26,20 @@
           <ul class="dropdown-menu" id="block">
                 <li class="mail">{{userEmail}}</li>
             <li ng-if="isAuth()">
-              <a ui-sref="logout" id="logout"><img src="images/logout web.png" width="12px" height="14px"/><b>Logout</b></a>
+              <a href="#" ng-click="logout()" id="logout"><img src="images/logout web.png" width="12px" height="14px"/><b>Logout</b></a>
               </li>
-
-
           </ul>
         </li>
       </ul>
       <div class="row">
 
       <ul class="nav navbar-nav " id="nav-content">
-        <li ng-class="{active: isActive('/dash')}"><a ui-sref="home.dashboard">Home</a></li>
-        <li ng-class="{active: isActive('/engineers')}"><a ui-sref="home.engineers">Engineers</a></li>
+
+        <li ng-class="{active: $state.includes('home.dashboard')}"><a ui-sref="home.dashboard">Home</a></li>
+        <li ng-class="{active: $state.includes('home.engineer')}"><a ui-sref="home.engineer.attendance({engineerId:'40001EI'})">Engineers</a></li>
+
+        <!-- <li ng-class="{active: isActive('/dash')}"><a ui-sref="home.dashboard">Home</a></li> -->
+        <!-- <li ng-class="{active: isActive('/engineer')}"><a ui-sref="home.engineer.attendance({engineerId:'40001EI'})">Engineers</a></li> -->
         <li><a ui-sref="Attendence">Attendence</a></li>
         <li><a ui-sref="Clients">Clients</a></li>
         <li><a ui-sref="Reports">Reports</a></li>

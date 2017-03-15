@@ -23,6 +23,8 @@ angular.module('mainApp').controller('homeCtrl', function ($scope, $location, $s
     $scope.name = name[0];
 
     $scope.isActive = function (destination) {
+      console.log(destination);
+      console.log($location.path());
         return destination === $location.path();
     };
 });
