@@ -35,12 +35,6 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
                 skipIfLoggedIn: skipIfLoggedIn //skips login
             }
         })
-    /** Logout state */
-        .state('logout', {
-            url: '/logout',
-            template: null,
-            controller: 'LogoutCtrl'
-        })
    /** Home state */
         .state('home', {
             url: '/',
