@@ -17,7 +17,7 @@ angular.module('mainApp').controller('loginCtrl', function ($scope, $state, $aut
     /**
      *@method login- function to login
      */
-    console.log(hrDashData.config);
+    console.log("config::",hrDashData.config);
     $scope.login = function () {
         $scope.dataLoading = true;
         $("#pwd-label").css("color", "#3B5372");

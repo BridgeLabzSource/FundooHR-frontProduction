@@ -1,8 +1,8 @@
-var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial','LocalStorageModule','satellizer','toastr']);
+var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'LocalStorageModule', 'satellizer', 'toastr']);
 
-mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
+mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
 
-    var skipIfLoggedIn = ['$q', '$auth', function ($q, $auth) {
+    var skipIfLoggedIn = ['$q', '$auth', function($q, $auth) {
         var deferred = $q.defer();
         if ($auth.isAuthenticated()) {
             deferred.reject();
@@ -12,7 +12,7 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
         return deferred.promise;
     }];
 
-    var loginRequired = ['$q', '$location', '$auth', function ($q, $location, $auth) {
+    var loginRequired = ['$q', '$location', '$auth', function($q, $location, $auth) {
         var deferred = $q.defer();
         if ($auth.isAuthenticated()) {
             deferred.resolve();
@@ -26,7 +26,7 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
 
     /** @define states */
     $stateProvider
-     /** Login state */
+        /** Login state */
         .state('login', {
             url: '/login',
             templateUrl: 'templates/login.html',
@@ -35,30 +35,86 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
                 skipIfLoggedIn: skipIfLoggedIn //skips login
             }
         })
-    /** Logout state */
+        /** Logout state */
         .state('logout', {
             url: '/logout',
             template: null,
             controller: 'LogoutCtrl'
         })
-   /** Home state */
+        /** Home state */
         .state('home', {
             url: '/',
             templateUrl: 'templates/home.html',
             controller: 'homeCtrl',
             resolve: {
-              loginRequired: loginRequired //loginRequired function will chek for token
-              }
+                loginRequired: loginRequired //loginRequired function will chek for token
+            }
         })
-    /** homes nested states */
-   /**dasBoard~state */
-        .state('home.dashboard',{
-            url:'dash',
+        /** homes nested states */
+        /**dasBoard~state */
+        .state('home.dashboard', {
+            url: 'dash',
             templateUrl: 'templates/dash.html',
             controller: 'dashCtrl',
             resolve: {
-                      loginRequired: loginRequired
-                    }
+                loginRequired: loginRequired
+            }
         })
+        .state('home.engineer', {
+            url: 'engineer/:engineerId',
+            templateUrl: 'templates/engineer.html',
+            controller: 'engineerCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('home.engineer.attendance', {
+            url: 'attendance',
+            templateUrl: 'templates/attendance.html',
+            controller: 'attendanceCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('home.engineer.personal', {
+            url: 'personal',
+            templateUrl: 'templates/personal.html',
+            controller: 'personalCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('home.engineer.profile', {
+            url: 'profile',
+            templateUrl: 'templates/profile.html',
+            controller: 'profileCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('home.engineer.hrData', {
+            url: 'HRData',
+            templateUrl: 'templates/hrData.html',
+            controller: 'hrDataCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('home.engineer.bank', {
+            url: 'bank',
+            templateUrl: 'templates/bank.html',
+            controller: 'bankCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('home.engineer.tracking', {
+            url: 'tracking',
+            templateUrl: 'templates/tracking.html',
+            controller: 'trackingCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        });
 
-});//end of config
+}); //end of config
