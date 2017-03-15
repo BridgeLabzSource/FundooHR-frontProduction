@@ -4,7 +4,7 @@
  *@param {string} dashCtrl - parameter refers to the controller used by HTML element
  *@param {function} selfInvoked- dependencies are added in it
  */
-angular.module('mainApp').controller('dashCtrl', function ($scope,restService) {
+angular.module('mainApp').controller('dashboardCtrl', function ($scope,restService) {
     var dash_timeStamp = new Date().getTime();
     $scope.dashBoardData=hrDashData.dashBoardData;
 

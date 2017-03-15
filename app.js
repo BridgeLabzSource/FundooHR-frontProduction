@@ -54,8 +54,8 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
    /**dasBoard~state */
         .state('home.dashboard',{
             url:'dash',
-            templateUrl: 'templates/dash.html',
-            controller: 'dashCtrl',
+            templateUrl: 'templates/dashboard.html',
+            controller: 'dashboardCtrl',
             resolve: {
                       loginRequired: loginRequired
                     }
