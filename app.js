@@ -60,5 +60,14 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
                       loginRequired: loginRequired
                     }
         })
+        /**engg~state */
+        .state('home.engineers',{
+            url:'dash',
+            templateUrl: 'templates/engineers.html',
+            controller: 'engCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
 
 });//end of config
