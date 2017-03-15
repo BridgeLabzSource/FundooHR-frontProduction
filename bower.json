@@ -1,0 +1,28 @@
+{
+  "name": "myFundooHr",
+  "authors": [
+    "bhavana2493 <bhavana4339@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/bhavana2493/FundooHr",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-aria": "^1.6.0",
+    "angular-ui-router": "^0.3.2",
+    "satellizer": "^0.15.5",
+    "angular-toastr": "^2.1.1",
+    "angular-animate": "^1.6.0",
+    "bootstrap": "^3.3.7",
+    "angular-local-storage": "^0.5.2",
+    "angular-material": "^1.1.3"
+  }
+}
