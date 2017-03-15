@@ -7,7 +7,6 @@
 angular.module('mainApp').controller('dashboardCtrl', function ($scope,restService) {
     var dash_timeStamp = new Date().getTime();
     $scope.dashBoardData=hrDashData.dashBoardData;
-
     // dashboard initialization
     $scope.dashPage=function(){
     var dashBoard = new Date();
