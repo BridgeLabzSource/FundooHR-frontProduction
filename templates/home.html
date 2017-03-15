@@ -31,7 +31,8 @@
           <ul class="dropdown-menu" id="block">
                 <li class="mail">{{userEmail}}</li>
             <li ng-if="isAuth()">
-              <a ui-sref="logout" id="logout"><img src="images/logout web.png" width="12px" height="14px"/><b>Logout</b></a>
+              <span id="logout" ng-click="logout()"><img src="images/logout web.png" width="12px" height="14px"/><b>
+                  &nbsp;Logout</b></span>
               </li>
 
 
