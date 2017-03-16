@@ -41,10 +41,10 @@
         <div class="row">
 
             <ul class="nav navbar-nav " id="nav-content">
-                <li ng-class="{active: isActive('/dash')}"><a ui-sref="home.dashboard">Home</a></li>
-                <li ng-class="{active: isActive('/engineers')}"><a ui-sref="home.engineers">Engineers</a></li>
-                <li><a ui-sref="Attendence">Attendence</a></li>
-                <li><a ui-sref="Clients">Clients</a></li>
+                <li ng-class="{active: isActive('/dashboard')}"><a ui-sref="dashboard">Home</a></li>
+                <li ng-class="{active: isActive('/engineers')}"><a ui-sref="engineers">Engineers</a></li>
+                <li ng-class="{active: isActive('/attendance')}"><a ui-sref="attendance">Attendance</a></li>
+                <li ng-class="{active: isActive('/atten')}"><a ui-sref="atten">Clients</a></li>
                 <li><a ui-sref="Reports">Reports</a></li>
             </ul>
         </div>
@@ -54,6 +54,3 @@
 
     <!-- /.container-fluid -->
 </nav>
-<div class="container">
-    <ui-view></ui-view>
-</div>

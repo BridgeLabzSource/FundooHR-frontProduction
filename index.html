@@ -17,7 +17,11 @@
 </head>
 
 <body ng-app="mainApp">
-    <ui-view></ui-view>
+<div>
+    <div ui-view="nav"></div>
+
+    <div ui-view="home"></div>
+</div>
 </body>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -38,6 +42,9 @@
 <script src="controller/homeCtrl.js"></script>
 <script src="controller/dashboardCtrl.js"></script>
 <script src="controller/engCtrl.js"></script>
+<script src="controller/attendanceSummary.js"></script>
+<script src="controller/atten.js"></script>
+
 
 
 <!--services-->
