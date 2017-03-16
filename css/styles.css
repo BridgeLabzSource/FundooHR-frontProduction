@@ -303,7 +303,7 @@ nav{
 
 /*dash card content*/
 .dash{
-    padding-top:60px;
+    padding-top:100px;
 }
 #column{
     padding-top:30px;
@@ -757,4 +757,3 @@ and (max-device-width : 1024px) {
 #load{
     margin-top: 7px;
 }
-

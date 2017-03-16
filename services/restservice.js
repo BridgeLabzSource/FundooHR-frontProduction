@@ -5,7 +5,6 @@ angular.module('mainApp').service('restService', function ($http, $log, $q, loca
     this.getRequest = function (path, query) {
 
         var deferred = $q.defer();
-
         $http({
             method: "GET",
             url: baseUrl + path,
@@ -15,11 +14,29 @@ angular.module('mainApp').service('restService', function ($http, $log, $q, loca
         }).then(function (data) {
             //sending data...
             deferred.resolve(data);
-        }), function (msg, code) {
+        }, function (msg, code) {
             deferred.reject(msg);
 
             $log.error(msg, code);
-        };
+        });
+        return deferred.promise;
+    };
+    this.postRequest = function (path, data) {
+
+        var deferred = $q.defer();
+        $http({
+            method: "post",
+            url: baseUrl + path,
+            data: data,
+            headers: {'x-token': token}
+            // "url": "employee.json"
+        }).then(function (data) {
+            //sending data...
+            deferred.resolve(data);
+        }, function (msg, code) {
+            deferred.reject(msg);
+            $log.error(msg, code);
+        });
         return deferred.promise;
     };
 

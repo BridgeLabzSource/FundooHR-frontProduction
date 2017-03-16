@@ -1,4 +1,4 @@
-<div ><!-- class="dash" -->
+<div class="dash" ><!-- -->
   <div ><!-- class="row" -->
     <div id="emp-profile" ng-init="getEmployeeData();">
       <div id="emp-details">
@@ -61,24 +61,27 @@
   <div id="line"> </div>
 </div>
 <div class="">
-  <div id="sidebar-wrapper" >
-          <nav class="navbar navbar-inverse sidebar" role="navigation">
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <!-- <span class="pull-right glyphicon glyphicon-calendar"></span> -->
-                  <!-- <span class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span> -->
-              <ul class="nav navbar-nav">
-                  <li  class="active"><a ui-sref="home.engineer.attendance"><strong>Attendance</strong><i class=" pull-right fa fa-calendar fa-lg" aria-hidden="true"></i></a></li>
-                  <li><a ui-sref="home.engineer.personal"><strong>Personal</strong><span class="pull-right showopacity glyphicon glyphicon-user"></span></a></li>
-                  <li><a ui-sref="home.engineer.profile"><strong>Profile</strong><i class="pull-right fa fa-camera-retro fa-lg"></i></a></li>
-                  <li><a ui-sref="home.engineer.hrData"><strong>HR Data</strong><i class="pull-right fa fa-address-book-o" aria-hidden="true"></i></a></li>
-                  <li><a ui-sref="home.engineer.bank"><strong>Bank</strong><i class="pull-right showopacity fa fa-university" aria-hidden="true"></i></a></li>
-                  <li><a ui-sref="home.engineer.tracking"><strong>Tracking</strong><i class="pull-right showopacity fa fa-bandcamp" aria-hidden="true"></i></a></li>
-              </ul>
-          </nav>
+  <div class="col-lg-3">
+      <div id="sidebar-wrapper" >
+              <nav class="navbar navbar-inverse sidebar" role="navigation">
+                      <!-- Collect the nav links, forms, and other content for toggling -->
+                      <!-- <span class="pull-right glyphicon glyphicon-calendar"></span> -->
+                      <!-- <span class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span> -->
+                  <ul class="nav navbar-nav">
+                      <li ng-class="{active: $state.includes('home.engineer.attendance')}"><a ui-sref="home.engineer.attendance"><strong>Attendance</strong><i class=" pull-right fa fa-calendar fa-lg" aria-hidden="true"></i></a></li>
+                      <li ng-class="{active: $state.includes('home.engineer.personal')}"><a ui-sref="home.engineer.personal"><strong>Personal</strong><span class="pull-right showopacity glyphicon glyphicon-user"></span></a></li>
+                      <li ng-class="{active: $state.includes('home.engineer.profile')}"><a ui-sref="home.engineer.profile"><strong>Profile</strong><i class="pull-right fa fa-camera-retro fa-lg"></i></a></li>
+                      <li ng-class="{active: $state.includes('home.engineer.hrData')}"><a ui-sref="home.engineer.hrData"><strong>HR Data</strong><i class="pull-right fa fa-address-book-o" aria-hidden="true"></i></a></li>
+                      <li ng-class="{active: $state.includes('home.engineer.bank')}"><a ui-sref="home.engineer.bank"><strong>Bank</strong><i class="pull-right showopacity fa fa-university" aria-hidden="true"></i></a></li>
+                      <li ng-class="{active: $state.includes('home.engineer.tracking')}"><a ui-sref="home.engineer.tracking"><strong>Tracking</strong><i class="pull-right showopacity fa fa-bandcamp" aria-hidden="true"></i></a></li>
+                  </ul>
+              </nav>
+      </div>
   </div>
-  <div class="">
-    <ui-view></ui-view>
+  <div class="col-lg-9">
+<ui-view></ui-view>
   </div>
+</div>
+
   <!-- <script src="js/toggle.js"></script> -->
-  </div>
 </div>

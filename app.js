@@ -1,4 +1,4 @@
-var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'LocalStorageModule', 'satellizer', 'toastr']);
+var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'LocalStorageModule', 'satellizer', 'toastr','xeditable']);
 
 mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
 
@@ -64,8 +64,8 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
         })
         .state('home.engineer.attendance', {
             url: '/attendance',
-            templateUrl: 'templates/attendance.html',
-            controller: 'attendanceCtrl',
+            templateUrl: 'templates/calendar.html',
+            // controller: 'attendanceCtrl',
             resolve: {
                 loginRequired: loginRequired
             }

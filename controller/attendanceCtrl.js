@@ -1,24 +1,24 @@
-angular.module('mainApp').controller('attendanceCtrl', function($scope,$rootScope,$stateParams,localStorageService,restService) {
-var engineerId = $stateParams.engineerId;
-/** Here I am Fetching the token from the localStorage **/
-// var token = localStorageService.get("token").token;
-var dashBoard = new Date();
-$scope.previous = dashBoard.setDate(dashBoard.getDate() - 1);
-var query = {
-    timeStamp: Date.now(),
-    engineerId
-};
-// restService call for Dashboard data..
-var promise = restService.getRequest('readEmployeeMonthlyAttendance', query);
-promise.then(function (data) {
-    var dashData = data.data;
-    $scope.dashData = dashData;
-    $rootScope.empdetails = dashData.employeeData;
-    console.log(dashData);
-});
+angular.module('mainApp').controller('attendanceCtrl', function($scope, $rootScope, $stateParams, localStorageService, restService,$http,$mdDialog) {
+    /** Here I am Fetching the token from the localStorage **/
+    // var token = localStorageService.get("token").token;
+    var dashBoard = new Date();
+    $scope.previous = dashBoard.setDate(dashBoard.getDate() - 1);
 
-// });
-// angular.module('mainApp').controller("AttendenceCtrl", function ($scope, $http, $rootScope, $mdDialog) {
+    // restService call for Dashboard data..
+    $scope.readData=function(timeStamp){
+      var query = {
+          timeStamp: timeStamp,
+          engineerId:$stateParams.engineerId
+      };
+    var promise = restService.getRequest('readEmployeeMonthlyAttendance', query);
+    promise.then(function(data) {
+        var dashData = data.data;
+        $scope.dashData = dashData;
+        $rootScope.empdetails = dashData.employeeData;
+        $rootScope.attendance = dashData.attendanceData;
+        $scope.attendance = dashData.attendanceData;
+    });
+  };
 
     console.log("calendar...");
 
@@ -28,16 +28,16 @@ promise.then(function (data) {
     //moment object to get date
     $scope.day = moment();
     $rootScope.attendanceData = [];
-    $rootScope.attendance = [];
-  //  var promise = $http.get("assets/attendance.json").then(function (response) {
-  //   	$rootScope.attendance = response.data[0];
-  //   	$scope.attendance = response.data[0];
-  //   	// console.log(response.data[0]);
-  //   	$rootScope.attendanceData = Object.keys(response.data[0]);
-  //   	//   console.log(attendance[1].attendanceStatus);
-  //   	console.log('called1');
-  //   	//   console.log($rootScope.attendance);
-  //   });
+    // $rootScope.attendance = [];
+    //  var promise = $http.get("assets/attendance.json").then(function (response) {
+    //   	$rootScope.attendance = response.data[0];
+    //   	$scope.attendance = response.data[0];
+    //   	// console.log(response.data[0]);
+    //   	$rootScope.attendanceData = Object.keys(response.data[0]);
+    //   	//   console.log(attendance[1].attendanceStatus);
+    //   	console.log('called1');
+    //   	//   console.log($rootScope.attendance);
+    //   });
     // $scope.$watch("selected", function (old, newData) {
     //     //console.log(old, newData)
     // });
@@ -59,7 +59,7 @@ promise.then(function (data) {
     $scope.markedStatus = {};
     $scope.incr = 0;
 
-    $scope.checkAttend = function (day) {
+    $scope.checkAttend = function(day) {
         console.log("called " + $scope.incr++);
         //console.log(day.date)
         var todayDate = moment();
@@ -81,7 +81,7 @@ promise.then(function (data) {
         }
         //console.log($scope.markedStatus);
     };
-    $scope.someD = function (data, attendanceStatus) {
+    $scope.someD = function(data, attendanceStatus) {
         console.log($scope.markedStatus);
         var dataNumber = JSON.parse(data);
         console.log('data ', dataNumber.number);
@@ -93,28 +93,23 @@ promise.then(function (data) {
                 scope: $scope,
                 preserveScope: true,
                 disableParentScroll: false,
-                controller: function ($scope) {
-                    $scope.save = function () {
-                        console.log("called save");
+                controller: function($scope) {
+                    $scope.save = function() {
                         item = {};
                         storeAttendence = {};
-                        storeAttendence["attendanceStatus"] = attendanceStatus;
-                        storeAttendence["markedStatus"] = "true";
-                        storeAttendence["punchIn"] = getTime($scope.punchIn);
-                        storeAttendence["punchOut"] = getTime($scope.punchOut);
-                        storeAttendence["reason"] = "";
-
+                        storeAttendence.engineerId = $stateParams.engineerId;
+                        storeAttendence.attendanceStatus = attendanceStatus;
+                        storeAttendence.markedStatus = true;
+                        storeAttendence.punchIn = getTime($scope.punchIn);
+                        storeAttendence.punchOut = getTime($scope.punchOut);
+                        storeAttendence.reason = "";
                         item[dataNumber.number] = storeAttendence;
-
-                        console.log(storeAttendence, item);
                         $scope.markedStatus[dataNumber.number] = attendanceStatus;
-
                         $scope.close();
-
-                    }
-                    $scope.close = function () {
+                    };
+                    $scope.close = function() {
                         $mdDialog.hide();
-                    }
+                    };
                 },
             });
         } else if (attendanceStatus === "Leave" || attendanceStatus === "CompLeave") {
@@ -124,26 +119,21 @@ promise.then(function (data) {
                 clickOutsideToClose: false,
                 scope: $scope,
                 preserveScope: true,
-                controller: function ($scope) {
-                    $scope.save = function () {
-                        console.log("called save");
+                controller: function($scope) {
+                    $scope.save = function() {
                         item = {};
                         storeAttendence = {};
-                        storeAttendence["attendanceStatus"] = attendanceStatus;
-                        storeAttendence["markedStatus"] = "true";
-                        storeAttendence["punchIn"] = "";
-                        storeAttendence["punchOut"] = "";
-                        storeAttendence["reason"] = $scope.reason;
+                        storeAttendence.engineerId = $stateParams.engineerId;
+                        storeAttendence.attendanceStatus = attendanceStatus;
+                        storeAttendence.markedStatus = true;
+                        storeAttendence.punchIn = "";
+                        storeAttendence.punchOut = "";
+                        storeAttendence.reason = $scope.reason;
                         item[data.number] = storeAttendence;
-
-                        console.error($scope.markedStatus);
-                        console.log(storeAttendence, item);
                         $scope.markedStatus[dataNumber.number] = attendanceStatus;
-
-                        console.error($scope.markedStatus);
                         $scope.close();
                     };
-                    $scope.close = function () {
+                    $scope.close = function() {
                         $mdDialog.hide();
                     };
                 },
