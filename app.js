@@ -56,7 +56,7 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
         })
         /**engg~state */
         .state('home.engineers',{
-            url:'dash',
+            url:'engineers',
             templateUrl: 'templates/engineers.html',
             controller: 'engCtrl',
             resolve: {

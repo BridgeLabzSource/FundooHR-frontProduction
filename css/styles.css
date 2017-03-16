@@ -161,7 +161,7 @@ nav{
     border-top:none;
     width:140px;
     transform:  scaleX(1.2);
-    transition: transform .2s ease;
+    transition: transform .4s ease;
 }
 }
  .row ul {
