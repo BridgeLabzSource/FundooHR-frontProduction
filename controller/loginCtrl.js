@@ -4,7 +4,7 @@
  *@param {string} loginCtrl - parameter refers to the controller used by HTML element
  *@param {function} selfInvoked- dependencies are added in it
  */
-angular.module('mainApp').controller('loginCtrl', function ($scope, $state, $auth, localStorageService) {
+angular.module('mainApp').controller('loginCtrl', function ($scope, $state, $auth, localStorageService,restService) {
 
     /**email and password validation regex pattern*/
     $scope.email = hrDashData.email;
@@ -23,7 +23,8 @@ angular.module('mainApp').controller('loginCtrl', function ($scope, $state, $aut
         $("#pwd-label").css("color", "#3B5372");
         $("#password").css("borderColor", "#3B5372");
         localStorageService.set('user', $scope.user.emailId);
-        $auth.login($scope.user, hrDashData.config) //satelizer service method call
+        var config={ method: 'POST', url: restService.baseUrl+'/login' };
+        $auth.login($scope.user,config) //satelizer service method call
             .then(function (data) {
                 if (data.status == 200) {
                     localStorageService.set("token", data.data);//response data is stored in localStorageService
