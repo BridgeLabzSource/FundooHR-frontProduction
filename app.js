@@ -57,7 +57,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         })
         .state('engineer', {
-          url:'/engineer',
+          url:'/engineer/:engineerId',
           views: {
               nav: {
                   templateUrl: 'templates/home.html'
@@ -120,5 +120,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         });
 
-});
+}).run(function($rootScope, $state) {
+      $rootScope.$state = $state;
+  });
      //end of config

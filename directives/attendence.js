@@ -1,7 +1,7 @@
 angular.module('mainApp').directive("dropdown", function ($rootScope, $http, $mdDialog) {
     return {
         restrict: "E",
-        templateUrl: "templates/dropdown.html",
+        templateUrl: "templates/engineer/dropdown.html",
         controller: "attendanceCtrl",
         scope: {
             selectedDay: '@selectedDay'

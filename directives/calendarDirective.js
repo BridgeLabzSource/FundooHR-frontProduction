@@ -1,7 +1,7 @@
 angular.module('mainApp').directive("calendar", function ($rootScope, $http, $mdDialog) {
     return {
         restrict: "E",
-        templateUrl: "templates/attendance.html",
+        templateUrl: "templates/engineer/attendance.html",
         scope: {
             selected: "=",
             data: "="

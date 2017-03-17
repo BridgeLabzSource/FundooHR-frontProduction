@@ -9,7 +9,6 @@ angular.module('mainApp').controller('loginCtrl', function ($scope, $state, $aut
     /**email and password validation regex pattern*/
     $scope.email = hrDashData.email;
     $scope.pwd = hrDashData.pwd;
-    console.log(hrDashData.pwd);
 
     /**dataloading icon*/
     $scope.dataLoading = false;
@@ -17,21 +16,17 @@ angular.module('mainApp').controller('loginCtrl', function ($scope, $state, $aut
     /**
      *@method login- function to login
      */
-    console.log("config::",hrDashData.config);
     $scope.login = function () {
         $scope.dataLoading = true;
         $("#pwd-label").css("color", "#3B5372");
         $("#password").css("borderColor", "#3B5372");
         localStorageService.set('user', $scope.user.emailId);
-        var config={ method: 'POST', url: restService.baseUrl+'/login' };
+        var config={ method: 'POST', url: restService.baseUrl+'login' }; //Creating the Configuration Object for satelizer
         $auth.login($scope.user,config) //satelizer service method call
             .then(function (data) {
                 if (data.status == 200) {
                     localStorageService.set("token", data.data);//response data is stored in localStorageService
-                    console.log("data_print" + data.data.emailId)
-                    console.log("You have successfully signed in!")
                     $state.go('dashboard');
-                    console.log('data ', data);
                 }
                 else {
                     $scope.dataLoading = false;
@@ -40,7 +35,6 @@ angular.module('mainApp').controller('loginCtrl', function ($scope, $state, $aut
                     $scope.error = "Invalid Password or Email Id";
                     toastr.error(error.data.message, error.status);
                     $state.go('login');
-
                 }
 
             })

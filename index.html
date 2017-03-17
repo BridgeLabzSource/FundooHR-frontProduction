@@ -1,23 +1,19 @@
 <html>
-
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=100%, initial-scale=1.0">
     <meta charset="utf-8">
     <title> FundooHr </title>
-
     <!--css links-->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/simple-sidebar.css">
     <link rel="stylesheet" href="css/attendance.css">
     <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.min.css">
 </head>
-
 <body ng-app="mainApp">
 <div>
     <div ui-view="nav"></div>
@@ -46,13 +42,15 @@
 <script src="controller/loginCtrl.js"></script>
 <script src="controller/homeCtrl.js"></script>
 <script src="controller/dashboardCtrl.js"></script>
-<script src="controller/engineerCtrl.js"></script>
-<script src="controller/attendanceCtrl.js"></script>
-<script src="controller/bankCtrl.js" charset="utf-8"></script>
-<script src="controller/hrDataCtrl.js" charset="utf-8"></script>
-<script src="controller/personalCtrl.js" charset="utf-8"></script>
-<script src="controller/profileCtrl.js" charset="utf-8"></script>
-<script src="controller/trackingCtrl.js" charset="utf-8"></script>
+
+<!-- Engineer Related Controllers -->
+<script src="controller/engineer/engineerCtrl.js"></script>
+<script src="controller/engineer/attendanceCtrl.js"></script>
+<script src="controller/engineer/bankCtrl.js" charset="utf-8"></script>
+<script src="controller/engineer/hrDataCtrl.js" charset="utf-8"></script>
+<script src="controller/engineer/personalCtrl.js" charset="utf-8"></script>
+<script src="controller/engineer/profileCtrl.js" charset="utf-8"></script>
+<script src="controller/engineer/trackingCtrl.js" charset="utf-8"></script>
 
 <!-- Directive -->
 <script src="directives/attendence.js" charset="utf-8"></script>

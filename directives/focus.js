@@ -4,7 +4,7 @@ angular.module('mainApp').directive('focusMe', function($timeout, $parse) {
     link: function(scope, element, attrs) {
       var model = $parse(attrs.focusMe);
       scope.$watch(model, function(value) {
-        if(value === true) { 
+        if(value === true) {
           $timeout(function() {
             element[0].focus(); 
           });

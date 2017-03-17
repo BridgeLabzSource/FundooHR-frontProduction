@@ -26,6 +26,9 @@ nav.sidebar,
 }
 @media (max-width:767px) {
   /*Allow main to be next to Nav*/
+  .calendar {
+      margin-top: 0px!important;
+  }
   .main {
       position: absolute;
       width: calc(100% - 40px);
@@ -34,11 +37,11 @@ nav.sidebar,
       float: right;
   }
   #sidebar-wrapper{
-    margin-top: 0px
+    margin-top: -10px
   }
   /*lets nav bar to be showed on mouseover*/
   nav.sidebar:hover+.main {
-      margin-left: 100px;
+      margin-left: 00px;
   }
   /*Center Brand*/
   nav.sidebar.navbar.sidebar>.container .navbar-brand,
@@ -375,7 +378,7 @@ nav.sidebar,
     #line {
         position: relative!important;
         margin-top: 0px !important;
-        top: 50px!important;
+        top: -5px!important;
     }
     #emp-info {
         margin: 0px;

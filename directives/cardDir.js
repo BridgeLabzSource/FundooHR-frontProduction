@@ -4,6 +4,6 @@ angular.module('mainApp').directive('card', function () {
         scope: {
             value: '='
         },
-        templateUrl: 'templates/card.html'
+        templateUrl: 'templates/engineer/card.html'
     };
 });

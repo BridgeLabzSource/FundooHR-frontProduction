@@ -25,40 +25,13 @@ angular.module('mainApp').controller('attendanceCtrl', function($scope, $rootSco
     //moment object to get date
     $scope.day = moment();
     $rootScope.attendanceData = [];
-    // $rootScope.attendance = [];
-    //  var promise = $http.get("assets/attendance.json").then(function (response) {
-    //   	$rootScope.attendance = response.data[0];
-    //   	$scope.attendance = response.data[0];
-    //   	// console.log(response.data[0]);
-    //   	$rootScope.attendanceData = Object.keys(response.data[0]);
-    //   	//   console.log(attendance[1].attendanceStatus);
-    //   	console.log('called1');
-    //   	//   console.log($rootScope.attendance);
-    //   });
-    // $scope.$watch("selected", function (old, newData) {
-    //     //console.log(old, newData)
-    // });
-    // $scope.readData = function (timestamp) {
-    //     console.log("read");
-
-    //     // console.log($scope.selected.unix());
-    //     $http({
-    //         "method": "GET",
-    //         "url": "http://192.168.0.171:3000/readEmployeeMonthlyAttendance?token=f12sd1fd2sf1&engineerId=427188EI&timeStamp=" + timestamp
-    //     }).then(function (data) {
-    //         console.log(data);
-    //         $scope.attendance = data.data.attendanceData;
-    //     })
-    // }
-
-
 
     $scope.markedStatus = {};
     $scope.incr = 0;
 
     $scope.checkAttend = function(day) {
         var todayDate = moment();
-
+        //console.log(todayDate.isBefore(day.date), day.date, todayDate);
         if (todayDate.isBefore(day.date)) {
             day.enable = false;
             return "upcoming";
@@ -71,29 +44,35 @@ angular.module('mainApp').controller('attendanceCtrl', function($scope, $rootSco
                 return "";
             }
         }
+        //console.log($scope.markedStatus);
     };
-    $scope.someD = function(data, attendanceStatus) {
-        console.log($scope.markedStatus);
+    $scope.doAttendance = function(data, attendanceStatus) {
         var dataNumber = JSON.parse(data);
-        console.log('data ', dataNumber.number);
-        if (attendanceStatus === "Present") {
+        var timeStamp =(new Date(dataNumber.date)).getTime();
             $mdDialog.show({
                 parent: angular.element(document.querySelector('#popupContainer')),
-                templateUrl: "templates/prompt.html",
+                templateUrl: "templates/engineer/prompt.html",
                 clickOutsideToClose: false,
                 scope: $scope,
                 preserveScope: true,
                 disableParentScroll: false,
                 controller: function($scope) {
+                  $scope.show=(attendanceStatus === "Present"); //To show template on screen
+
                     $scope.save = function() {
                         item = {};
                         storeAttendence = {};
+                        storeAttendence.timeStamp = timeStamp;
                         storeAttendence.engineerId = $stateParams.engineerId;
                         storeAttendence.attendanceStatus = attendanceStatus;
-                        storeAttendence.markedStatus = true;
-                        storeAttendence.punchIn = getTime($scope.punchIn);
-                        storeAttendence.punchOut = getTime($scope.punchOut);
-                        storeAttendence.reason = "";
+                        storeAttendence.markedStatus = "true";
+                        storeAttendence.punchIn = (attendanceStatus === "Present"?getTime($scope.punchIn):"");
+                        storeAttendence.punchOut = (attendanceStatus === "Present"?getTime($scope.punchOut):"");
+                        storeAttendence.reason = (attendanceStatus !== "Present"?$scope.reason:"");
+                        restService.postRequest("createEmployeeDayAttendance",storeAttendence).then(function (){
+                          alert("success");
+                        });
+                        console.log(storeAttendence);
                         item[dataNumber.number] = storeAttendence;
                         $scope.markedStatus[dataNumber.number] = attendanceStatus;
                         $scope.close();
@@ -103,37 +82,7 @@ angular.module('mainApp').controller('attendanceCtrl', function($scope, $rootSco
                     };
                 },
             });
-        } else if (attendanceStatus === "Leave" || attendanceStatus === "CompLeave") {
-            $mdDialog.show({
-                parent: angular.element(document.querySelector('#popupContainer')),
-                templateUrl: "templates/prompt1.html",
-                clickOutsideToClose: false,
-                scope: $scope,
-                preserveScope: true,
-                controller: function($scope) {
-                    $scope.save = function() {
-                        item = {};
-                        storeAttendence = {};
-                        storeAttendence.engineerId = $stateParams.engineerId;
-                        storeAttendence.attendanceStatus = attendanceStatus;
-                        storeAttendence.markedStatus = true;
-                        storeAttendence.punchIn = "";
-                        storeAttendence.punchOut = "";
-                        storeAttendence.reason = $scope.reason;
-                        item[data.number] = storeAttendence;
-                        $scope.markedStatus[dataNumber.number] = attendanceStatus;
-                        $scope.close();
-                    };
-                    $scope.close = function() {
-                        $mdDialog.hide();
-                    };
-                },
-                disableParentScroll: false,
-            });
-        }
-
     };
-
     function getTime(date) {
         var hour = date.getHours(),
             min = date.getMinutes();
@@ -151,7 +100,5 @@ angular.module('mainApp').controller('attendanceCtrl', function($scope, $rootSco
         } else {
             return (hour - 12) + ":" + min + " PM";
         }
-
     }
-
 });

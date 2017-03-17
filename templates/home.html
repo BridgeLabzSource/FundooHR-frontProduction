@@ -24,7 +24,7 @@
            <img src="images/user.png" width="20px" height="20px"/><span class="fullname">{{name}}</span>
             <span class="caret"></span></a>
           <ul class="dropdown-menu" id="block">
-                <li class="mail">{{userEmail}}</li>
+            <li class="mail">{{userEmail}}</li>
             <li ng-if="isAuth()">
               <span ng-click="logout()" id="logout"><img src="images/logout web.png" width="12px" height="14px"/><b>&nbsp;Logout
               </b></span>
@@ -36,7 +36,7 @@
 
       <ul class="nav navbar-nav " id="nav-content">
         <li ng-class="{active: isActive('/dashboard')}"><a ui-sref="dashboard">Home</a></li>
-        <li ng-class="{active: isActive('/engineer')}"><a ui-sref="engineer">Engineers</a></li>
+        <li ng-class="{active: $state.includes('engineer')}"><a ui-sref="engineer.attendance({engineerId:'40001EI'})">Engineers</a></li>
         <li><a ui-sref="Attendence">Attendence</a></li>
         <li><a ui-sref="Clients">Clients</a></li>
         <li><a ui-sref="Reports">Reports</a></li>
