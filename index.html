@@ -9,11 +9,13 @@
     <!--css links-->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-
-
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="css/attendance.css">
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.min.css">
 </head>
 
 <body ng-app="mainApp">
@@ -35,6 +37,8 @@
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
 <script src="bower_components/satellizer/dist/satellizer.min.js"></script>
+<script src="bower_components/angular-xeditable/dist/js/xeditable.min.js" charset="utf-8"></script>
+<script src="bower_components/moment/moment.js" charset="utf-8"></script>
 
 <script src="app.js"></script>
 
@@ -42,7 +46,21 @@
 <script src="controller/loginCtrl.js"></script>
 <script src="controller/homeCtrl.js"></script>
 <script src="controller/dashboardCtrl.js"></script>
+<script src="controller/engineerCtrl.js"></script>
+<script src="controller/attendanceCtrl.js"></script>
+<script src="controller/bankCtrl.js" charset="utf-8"></script>
+<script src="controller/hrDataCtrl.js" charset="utf-8"></script>
+<script src="controller/personalCtrl.js" charset="utf-8"></script>
+<script src="controller/profileCtrl.js" charset="utf-8"></script>
+<script src="controller/trackingCtrl.js" charset="utf-8"></script>
 
+<!-- Directive -->
+<script src="directives/attendence.js" charset="utf-8"></script>
+<script src="directives/calendarDirective.js" charset="utf-8"></script>
+<script src="directives/cardDir.js" charset="utf-8"></script>
+<script src="directives/focus.js" charset="utf-8"></script>
+
+<!-- Services  -->
 <script src="services/restservice.js"></script>
 
 
