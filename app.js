@@ -22,34 +22,36 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
         return deferred.promise;
     }];
 
-    $urlRouterProvider.otherwise('/dash');
+    $urlRouterProvider.otherwise('/dashboard');
 
     /** @define states */
     $stateProvider
      /** Login state */
         .state('login', {
             url: '/login',
-            templateUrl: 'templates/login.html',
-            controller: 'loginCtrl',
+            views: {
+                home: {
+                    templateUrl: 'templates/login.html',
+                    controller: 'loginCtrl'
+                }
+            },
             resolve: {
                 skipIfLoggedIn: skipIfLoggedIn //skips login
             }
         })
-   /** Home state */
-        .state('home', {
-            url: '/',
-            templateUrl: 'templates/home.html',
-            controller: 'homeCtrl',
-            resolve: {
-              loginRequired: loginRequired //loginRequired function will chek for token
-              }
-        })
     /** homes nested states */
    /**dasBoard~state */
-        .state('home.dashboard',{
-            url:'dash',
-            templateUrl: 'templates/dashboard.html',
-            controller: 'dashboardCtrl',
+        .state('dashboard',{
+            url:'/dashboard',
+            views: {
+                nav: {
+                    templateUrl: 'templates/home.html'
+                },
+                home: {
+                    templateUrl: 'templates/dashboard.html',
+                    controller: 'dashboardCtrl'
+                }
+            },
             resolve: {
                       loginRequired: loginRequired
                     }

@@ -29,7 +29,7 @@ angular.module('mainApp').controller('loginCtrl', function ($scope, $state, $aut
                     localStorageService.set("token", data.data);//response data is stored in localStorageService
                     console.log("data_print" + data.data.emailId)
                     console.log("You have successfully signed in!")
-                    $state.go('home.dashboard');
+                    $state.go('dashboard');
                     console.log('data ', data);
                 }
                 else {
