@@ -1,15 +1,21 @@
-angular.module('mainApp').controller('attendanceCtrl', function($scope, $rootScope, $stateParams, localStorageService, restService,$http,$mdDialog) {
+/**
+ * Attendence controller
+ *@define controller
+ *@param {string} attendanceCtrl - parameter refers to the controller used by HTML element
+ *@param {function} selfInvoked- dependencies are added in it
+ */
+angular.module('mainApp')
+.controller('attendanceCtrl', function($scope, $rootScope, $stateParams, localStorageService, restService,$http,$mdDialog) {
     /** Here I am Fetching the token from the localStorage **/
-    // var token = localStorageService.get("token").token;
     var dashBoard = new Date();
     $scope.previous = dashBoard.setDate(dashBoard.getDate() - 1);
 
-    // restService call for Dashboard data..
     $scope.readData=function(timeStamp){
       var query = {
           timeStamp: timeStamp,
           engineerId:$stateParams.engineerId
       };
+      // restService call for Engineer Attendence data..
     var promise = restService.getRequest('readEmployeeMonthlyAttendance', query);
     promise.then(function(data) {
         var dashData = data.data;
@@ -31,7 +37,6 @@ angular.module('mainApp').controller('attendanceCtrl', function($scope, $rootSco
 
     $scope.checkAttend = function(day) {
         var todayDate = moment();
-        //console.log(todayDate.isBefore(day.date), day.date, todayDate);
         if (todayDate.isBefore(day.date)) {
             day.enable = false;
             return "upcoming";
