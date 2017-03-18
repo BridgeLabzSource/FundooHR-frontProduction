@@ -8,8 +8,6 @@ angular.module('mainApp').controller('engCtrl', function ($scope, utilService, $
     $scope.filters = hrDashData.filters;
     $scope.alphabet = hrDashData.alphabets;
 
-    var data;
-
     //Engineer page display..
     $scope.engPage = function () {
         $scope.dataLoading = true; // data loading icon...

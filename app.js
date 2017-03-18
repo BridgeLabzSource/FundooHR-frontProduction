@@ -40,15 +40,6 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
                 skipIfLoggedIn: skipIfLoggedIn //skips login
             }
         })
-   /** Home state */
-        // .state('home', {
-        //     url: '/',
-        //     templateUrl: 'templates/home.html',
-        //     controller: 'homeCtrl',
-        //     resolve: {
-        //       loginRequired: loginRequired //loginRequired function will chek for token
-        //       }
-        // })
     /** homes nested states */
    /**dasBoard~state */
         .state('dashboard',{
@@ -90,8 +81,7 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
                     templateUrl: 'templates/home.html'
                 },
                 home: {
-                    templateUrl: 'templates/attendanceSummary.html',
-                    controller: 'attendanceCtrl'
+                    template: '<calender>hello</calender>'
                 }
             },
 
