@@ -6,6 +6,7 @@
  */
 angular.module('mainApp').controller('dashboardCtrl', function ($scope,restService) {
     var dash_timeStamp = new Date().getTime();
+    console.log(dash_timeStamp);
     $scope.dashBoardData=hrDashData.dashBoardData;
     // dashboard initialization
     $scope.dashPage=function(){
@@ -15,7 +16,7 @@ angular.module('mainApp').controller('dashboardCtrl', function ($scope,restServi
         timeStamp: dash_timeStamp
     };
     // restService call for Dashboard data..
-    var promise = restService.getRequest('readDashboardData', query);
+    var promise = restService.getRequest('readDashboardData',query);
     promise.then(function (data) {
         var dashData = data.data;
         $scope.dashData = dashData;

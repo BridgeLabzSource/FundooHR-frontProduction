@@ -4,7 +4,7 @@
  *@param {string} engCtrl - parameter refers to the controller used by HTML element
  *@param {function} selfInvoked- dependencies are added in it
  */
-angular.module('mainApp').controller('engCtrl', function ($scope, utilService, $state,restService) {
+angular.module('mainApp').controller('engineerMainCtrl', function ($scope, utilService, $state,restService) {
     $scope.filters = hrDashData.filters;
     $scope.alphabet = hrDashData.alphabets;
 

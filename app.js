@@ -1,8 +1,8 @@
-var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'LocalStorageModule', 'satellizer', 'toastr','xeditable']);
+var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'LocalStorageModule', 'satellizer', 'toastr', 'xeditable']);
 
-mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
+mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
 
-    var skipIfLoggedIn = ['$q', '$auth', function($q, $auth) {
+    var skipIfLoggedIn = ['$q', '$auth', function ($q, $auth) {
         var deferred = $q.defer();
         if ($auth.isAuthenticated()) {
             deferred.reject();
@@ -12,7 +12,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
         return deferred.promise;
     }];
 
-    var loginRequired = ['$q', '$location', '$auth', function($q, $location, $auth) {
+    var loginRequired = ['$q', '$location', '$auth', function ($q, $location, $auth) {
         var deferred = $q.defer();
         if ($auth.isAuthenticated()) {
             deferred.resolve();
@@ -26,7 +26,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
 
     /** @define states */
     $stateProvider
-        /** Login state */
+    /** Login state */
         .state('login', {
             url: '/login',
             views: {
@@ -39,10 +39,10 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
                 skipIfLoggedIn: skipIfLoggedIn //skips login
             }
         })
-    /** homes nested states */
-   /**dasBoard~state */
-        .state('dashboard',{
-            url:'/dashboard',
+        /** homes nested states */
+        /**dasBoard~state */
+        .state('dashboard', {
+            url: '/dashboard',
             views: {
                 nav: {
                     templateUrl: 'templates/home.html'
@@ -56,36 +56,51 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
                 loginRequired: loginRequired
             }
         })
-        .state('engineer', {
-          url:'/engineer/:engineerId',
-          views: {
-              nav: {
-                  templateUrl: 'templates/home.html'
-              },
-              home: {
-                  templateUrl: 'templates/engineer/engineer.html',
-                  controller: 'engineerCtrl'
-              }
-          },
-          resolve: {
-              loginRequired: loginRequired
-          }
-        })
-        // /**engg~state */
-        // .state('engineers', {
-        //     url: '/engineers',
+        // .state('engineer', {
+        //     url: '/engineer',
         //     views: {
         //         nav: {
         //             templateUrl: 'templates/home.html'
         //         },
         //         home: {
-        //             templateUrl: 'templates/engineers.html',
-        //             controller: 'engCtrl'
+        //             template: '<ui-view></ui-view>',
+        //             controller : function ($state) {
+        //                 $state.go('engineer.search');
+        //             }
         //         }
+        //     },
+        //     resolve: {
+        //         loginRequired: loginRequired
         //     }
         // })
-
-        .state('engineer.personal', {
+        .state('engineer', {
+            url: '/engineer',
+            views: {
+                nav: {
+                    templateUrl: 'templates/home.html'
+                },
+                home: {
+                    templateUrl: 'templates/engineers.html',
+                    controller: 'engineerMainCtrl'
+                }
+            },
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('details', {
+            url: '/details',
+            views: {
+                nav: {
+                    templateUrl: 'templates/home.html'
+                },
+                home: {
+                    templateUrl: 'templates/engineer/engineer.html',
+                    controller: 'engineerCtrl'
+                }
+            }
+        })
+        .state('details.personal', {
             url: '/personal',
             templateUrl: 'templates/engineer/personal.html',
             controller: 'personalCtrl',
@@ -94,7 +109,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
                 loginRequired: loginRequired
             }
         })
-        .state('engineer.profile', {
+        .state('details.profile', {
             url: '/profile',
             templateUrl: 'templates/engineer/profile.html',
             controller: 'profileCtrl',
@@ -103,7 +118,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
                 loginRequired: loginRequired
             }
         })
-        .state('engineer.hrData', {
+        .state('details.hrData', {
             url: '/HRData',
             templateUrl: 'templates/engineer/hrData.html',
             controller: 'hrDataCtrl',
@@ -111,7 +126,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
                 loginRequired: loginRequired
             }
         })
-        .state('engineer.bank', {
+        .state('details.bank', {
             url: '/bank',
             templateUrl: 'templates/engineer/bank.html',
             controller: 'bankCtrl',
@@ -119,7 +134,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
                 loginRequired: loginRequired
             }
         })
-        .state('engineer.tracking', {
+        .state('details.tracking', {
             url: '/tracking',
             templateUrl: 'templates/engineer/tracking.html',
             controller: 'trackingCtrl',
@@ -128,8 +143,8 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         })
         /**engg~state */
-        .state('attendance',{
-            url:'/attendance',
+        .state('attendance', {
+            url: '/attendance',
             views: {
                 nav: {
                     templateUrl: 'templates/home.html'
@@ -143,7 +158,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             }
         });
 
-}).run(function($rootScope, $state) {
-      $rootScope.$state = $state;
-  });
-     //end of config
+}).run(function ($rootScope, $state) {
+    $rootScope.$state = $state;
+});
+//end of config

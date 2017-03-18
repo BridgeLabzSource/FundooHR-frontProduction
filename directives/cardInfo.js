@@ -6,6 +6,12 @@ angular.module('mainApp').directive('cardInfo', function() {
             data: '='
         },
         /* directive redirect to the html file*/
-        templateUrl: 'templates/cardInfo.html',
+        templateUrl: 'partials/cardInfo.html',
+        controller : function ($scope,$state) {
+            $scope.showProfile = function(){
+                $state.go('details');
+            }
+        }
     }
+
 });
