@@ -1,22 +1,20 @@
 <html>
-
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=100%, initial-scale=1.0">
     <meta charset="utf-8">
     <title> FundooHr </title>
-
     <!--css links-->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="css/font.css">
-
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/Calendar.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-
-
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="css/attendance.css">
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.min.css">
 </head>
-
 <body ng-app="mainApp">
 <div>
     <div ui-view="nav"></div>
@@ -36,6 +34,8 @@
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
 <script src="bower_components/satellizer/dist/satellizer.min.js"></script>
+<script src="bower_components/angular-xeditable/dist/js/xeditable.min.js" charset="utf-8"></script>
+<script src="bower_components/moment/moment.js" charset="utf-8"></script>
 
 <script src="app.js"></script>
 
@@ -47,9 +47,28 @@
 <script src="controller/attendanceSummary.js"></script>
 <script src="controller/atten.js"></script>
 
+<<<<<<< HEAD
 
 
 <!--services-->
+=======
+<!-- Engineer Related Controllers -->
+<script src="controller/engineer/engineerCtrl.js"></script>
+<script src="controller/engineer/attendanceCtrl.js"></script>
+<script src="controller/engineer/bankCtrl.js" charset="utf-8"></script>
+<script src="controller/engineer/hrDataCtrl.js" charset="utf-8"></script>
+<script src="controller/engineer/personalCtrl.js" charset="utf-8"></script>
+<script src="controller/engineer/profileCtrl.js" charset="utf-8"></script>
+<script src="controller/engineer/trackingCtrl.js" charset="utf-8"></script>
+
+<!-- Directive -->
+<script src="directives/attendence.js" charset="utf-8"></script>
+<script src="directives/calendarDirective.js" charset="utf-8"></script>
+<script src="directives/cardDir.js" charset="utf-8"></script>
+<script src="directives/focus.js" charset="utf-8"></script>
+
+<!-- Services  -->
+>>>>>>> 4b6524baef7c5fec12d99fca19fa337e235df186
 <script src="services/restservice.js"></script>
 <script src="services/util.js"></script>
 

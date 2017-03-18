@@ -18,10 +18,13 @@ angular.module('mainApp').controller('homeCtrl', function ($scope, $location, $s
     $scope.today = new Date();
     $scope.userEmail = localStorageService.get('user');
     var name = $scope.userEmail.split('@');
+
     console.log(name);
     $scope.name = name[0];
 
     $scope.isActive = function (destination) {
+      console.log(destination);
+      console.log($location.path());
         return destination === $location.path();
     };
 });
