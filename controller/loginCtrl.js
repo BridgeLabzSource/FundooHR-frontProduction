@@ -26,6 +26,7 @@ angular.module('mainApp').controller('loginCtrl', function ($scope, $state, $aut
             .then(function (data) {
                 if (data.status == 200) {
                     localStorageService.set("token", data.data);//response data is stored in localStorageService
+
                     $state.go('dashboard');
                 }
                 else {

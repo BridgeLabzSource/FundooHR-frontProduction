@@ -18,7 +18,8 @@ angular.module('mainApp').controller('homeCtrl', function ($scope, $location, $s
     $scope.today = new Date();
     $scope.userEmail = localStorageService.get('user');
     var name = $scope.userEmail.split('@');
-    // HOME controller ok
+
+    console.log(name);
     $scope.name = name[0];
 
     $scope.isActive = function (destination) {

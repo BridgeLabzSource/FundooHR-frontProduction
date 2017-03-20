@@ -1,0 +1,33 @@
+
+.calendar {
+    float: left;
+    display: block;
+    background: white;
+    font-family: Applegothic;
+    border: solid 4px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    border-width: 3px ;
+    border-color: #6fb8d9;
+    @spacing: 5px;
+    /*@icon-width: 20px;*/
+    /*div.week {*/
+        /*float: left;*/
+        /*width: 100%;*/
+        /*border-top: solid 1px;*/
+        /*span.day {*/
+            /*float: left;*/
+            /*width: 100%/7;*/
+            /*.border-box {*/
+                /*border-left: solid 2px;*/
+                /*font-size: 17px;*/
+                /*font-family: serif;*/
+                /*text-align: center;*/
+            /*}*/
+            /*.vertical-centre(70px){*/
+            /*background: white;*/
+            /*cursor: pointer;*/
+            /*&.different-month {*/
+                /*color: white;*/
+            /*}*/
+        }
