@@ -15,7 +15,7 @@ angular.module('mainApp').controller('dashboardCtrl', function ($scope,restServi
         timeStamp: dash_timeStamp
     };
     // restService call for Dashboard data..
-    var promise = restService.getRequest('readDashboardData', query);
+    var promise = restService.httpRequest('readDashboardData', query,"get");
     promise.then(function (data) {
         var dashData = data.data;
         $scope.dashData = dashData;

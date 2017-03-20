@@ -16,7 +16,7 @@ angular.module('mainApp')
           engineerId:$stateParams.engineerId
       };
       // restService call for Engineer Attendence data..
-    var promise = restService.getRequest('readEmployeeMonthlyAttendance', query);
+    var promise = restService.httpRequest('readEmployeeMonthlyAttendance', query,"get");
     promise.then(function(data) {
         var dashData = data.data;
         $scope.dashData = dashData;
@@ -74,7 +74,7 @@ angular.module('mainApp')
                         storeAttendence.punchIn = (attendanceStatus === "Present"?getTime($scope.punchIn):"");
                         storeAttendence.punchOut = (attendanceStatus === "Present"?getTime($scope.punchOut):"");
                         storeAttendence.reason = (attendanceStatus !== "Present"?$scope.reason:"");
-                        restService.postRequest("createEmployeeDayAttendance",storeAttendence).then(function (){
+                        restService.httpRequest("createEmployeeDayAttendance",storeAttendence,"post").then(function (){
                           alert("success");
                         });
                         console.log(storeAttendence);
