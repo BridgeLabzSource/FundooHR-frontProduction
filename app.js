@@ -118,7 +118,7 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
         //         }
         //     }
         // })
-        .state('engineer.personal', {
+        .state('engineer.engineerData.personal', {
             url: '/personal',
             templateUrl: 'templates/engineer/personal.html',
             controller: 'personalCtrl',
@@ -132,21 +132,15 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                 loginRequired: loginRequired
             }
         })
-        .state('engineer.profile', {
+        .state('engineer.engineerData.profile', {
             url: '/profile',
-            views:{
-              "engNav":{
-                templateUrl: 'templates/engineer/engineer.html',
-                controller: 'engineerCtrl'
-              }
-            },
             templateUrl: 'templates/engineer/profile.html',
             controller: 'profileCtrl',
             resolve: {
                 loginRequired: loginRequired
             }
         })
-        .state('engineer.hrData', {
+        .state('engineer.engineerData.hrData', {
             url: '/HRData',
             views:{
               "engNav":{
@@ -160,7 +154,7 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                 loginRequired: loginRequired
             }
         })
-        .state('engineer.bank', {
+        .state('engineer.engineerData.bank', {
             url: '/bank',
             views:{
               "engNav":{
@@ -174,7 +168,7 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                 loginRequired: loginRequired
             }
         })
-        .state('engineer.tracking', {
+        .state('engineer.engineerData.tracking', {
             url: '/tracking',
             views:{
               "engNav":{

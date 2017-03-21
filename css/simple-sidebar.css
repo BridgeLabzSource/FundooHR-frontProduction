@@ -26,8 +26,8 @@ nav.sidebar,
 }
 @media (max-width:767px) {
   /*Allow main to be next to Nav*/
-  .calendar {
-      margin-top: 0px!important;
+  .custom-margin{
+    margin-top: 0px!important;
   }
   .main {
       position: absolute;

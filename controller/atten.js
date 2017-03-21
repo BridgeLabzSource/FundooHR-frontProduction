@@ -7,4 +7,4 @@
 angular.module('mainApp').controller('attenCtrl', function ($scope,restService) {
     var dash_timeStamp = new Date().getTime();
 
-})
+});

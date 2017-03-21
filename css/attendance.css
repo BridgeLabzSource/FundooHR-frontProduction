@@ -4,7 +4,9 @@
 md-backdrop.md-dialog-backdrop .md-opaque{
     height: 0px !important;
 }
-
+.custom-margin{
+  margin-top: 300px;
+}
 
 #popupContainer {
     max-width: 623px;
@@ -41,7 +43,6 @@ table#attendence th {
 }
 
 .calendar {
-    margin-top: 300px;
     max-width: 623px;
     max-height: 430px;
 }
