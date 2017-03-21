@@ -11,7 +11,7 @@ angular.module('mainApp').service('restService', function ($http, $log, $q, loca
             url: self.baseUrl + path,
             headers: {'x-token': token}
         };
-        if(method==="get")
+        if(method==="get" || method === "GET")
         httpObj.params=data;
         else {
         httpObj.data = data;

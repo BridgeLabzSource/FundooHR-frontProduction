@@ -62,12 +62,7 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
         //         nav: {
         //             templateUrl: 'templates/home.html'
         //         },
-        //         home: {
-        //             template: '<ui-view></ui-view>',
-        //             controller : function ($state) {
-        //                 $state.go('engineer.search');
-        //             }
-        //         }
+
         //     },
         //     resolve: {
         //         loginRequired: loginRequired
@@ -80,62 +75,113 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                     templateUrl: 'templates/home.html'
                 },
                 home: {
-                    templateUrl: 'templates/engineers.html',
-                    controller: 'engineerMainCtrl'
+                    template: '<ui-view></ui-view>',
                 }
             },
             resolve: {
                 loginRequired: loginRequired
             }
-        })
-        .state('details', {
-            url: '/details',
-            views: {
-                nav: {
-                    templateUrl: 'templates/home.html'
-                },
-                home: {
+          })
+        .state('engineer.search', {
+                    url: '/search',
+                    templateUrl: 'templates/engineers.html',
+                    controller: 'engineerMainCtrl',
+                    resolve: {
+                        loginRequired: loginRequired
+                    }
+                })
+        .state('engineer.engineerData', {
+                    url: '/:engineerId',
                     templateUrl: 'templates/engineer/engineer.html',
-                    controller: 'engineerCtrl'
-                }
+                    // controller: 'engineerMainCtrl',
+                    resolve: {
+                        loginRequired: loginRequired
+                    }
+                })
+
+        .state('engineer.engineerData.attendance', {
+            url: '/attendance',
+            templateUrl: 'templates/engineer/calendar.html',
+            resolve: {
+                loginRequired: loginRequired
             }
         })
-        .state('details.personal', {
+        // .state('details', {
+        //     url: '/details/:engineerId',
+        //     views: {
+        //         nav: {
+        //             templateUrl: 'templates/home.html'
+        //         },
+        //         home: {
+        //             templateUrl: 'templates/engineer/engineer.html',
+        //             controller: 'engineerCtrl'
+        //         }
+        //     }
+        // })
+        .state('engineer.personal', {
             url: '/personal',
             templateUrl: 'templates/engineer/personal.html',
             controller: 'personalCtrl',
-
+            views:{
+              "engNav":{
+                templateUrl: 'templates/engineer/engineer.html',
+                controller: 'engineerCtrl'
+              }
+            },
             resolve: {
                 loginRequired: loginRequired
             }
         })
-        .state('details.profile', {
+        .state('engineer.profile', {
             url: '/profile',
+            views:{
+              "engNav":{
+                templateUrl: 'templates/engineer/engineer.html',
+                controller: 'engineerCtrl'
+              }
+            },
             templateUrl: 'templates/engineer/profile.html',
             controller: 'profileCtrl',
-
             resolve: {
                 loginRequired: loginRequired
             }
         })
-        .state('details.hrData', {
+        .state('engineer.hrData', {
             url: '/HRData',
+            views:{
+              "engNav":{
+                templateUrl: 'templates/engineer/engineer.html',
+                controller: 'engineerCtrl'
+              }
+            },
             templateUrl: 'templates/engineer/hrData.html',
             controller: 'hrDataCtrl',
             resolve: {
                 loginRequired: loginRequired
             }
         })
-        .state('details.bank', {
+        .state('engineer.bank', {
             url: '/bank',
+            views:{
+              "engNav":{
+                templateUrl: 'templates/engineer/engineer.html',
+                controller: 'engineerCtrl'
+              }
+            },
             templateUrl: 'templates/engineer/bank.html',
             controller: 'bankCtrl',
             resolve: {
                 loginRequired: loginRequired
             }
         })
-        .state('details.tracking', {
+        .state('engineer.tracking', {
             url: '/tracking',
+            views:{
+              "engNav":{
+                templateUrl: 'templates/engineer/engineer.html',
+                controller: 'engineerCtrl'
+              }
+            },
             templateUrl: 'templates/engineer/tracking.html',
             controller: 'trackingCtrl',
             resolve: {

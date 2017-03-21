@@ -11,7 +11,6 @@ angular.module('mainApp').controller('homeCtrl', function ($scope, $location, $s
                 toastr.info('You have been logged out');
                 $state.go('login');
             }).catch(function (error) {
-            console.log(error.data.message, error.status);
             toastr.error(error.data.message, error.status);
         });
     };
@@ -23,8 +22,7 @@ angular.module('mainApp').controller('homeCtrl', function ($scope, $location, $s
     $scope.name = name[0];
 
     $scope.isActive = function (destination) {
-      console.log(destination);
-      console.log($location.path());
+      // console.log($location.path());
         return destination === $location.path();
     };
 });

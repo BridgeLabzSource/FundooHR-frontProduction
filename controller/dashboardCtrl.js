@@ -23,11 +23,11 @@ angular.module('mainApp').controller('dashboardCtrl', function ($scope,restServi
         $scope.dashData = dashData;
         console.log(dashData);
     });
-    }
+  };
     //splitting key by space
     $scope.split = function (key) {
         key = key.split(/(?=[A-Z])/).join(" ");
         return key.charAt(0).toUpperCase() + key.slice(1);
-    }
+    };
 
-})
+});

@@ -71,11 +71,8 @@ angular.module("mainApp").directive("calendar", function()
             var query = {
                    timeStamp
             };
-            var config = {
-                  "x-token": token
-            }
-            restService.getRequest('readMonthlyAttendanceSummary', query,
-            config).then(function(data)
+
+            restService.httpRequest('readMonthlyAttendanceSummary', query,"get").then(function(data)
             {
                 $scope.attendance = {};
                 data.data.attendance.forEach(function(value, key) {
@@ -92,11 +89,8 @@ angular.module("mainApp").directive("calendar", function()
                 var query = {
                       timeStamp
                 };
-                var config = {
-                    "x-token": token
-                }
-                restService.getRequest('readMonthlyAttendanceSummary', query,
-                 config).then(function(data) {
+
+                restService.httpRequest('readMonthlyAttendanceSummary', query,"get").then(function(data) {
                   $scope.attendance = {};
                     data.data.attendance.forEach(function(value, key) {
                     $scope.attendance[value.day] = {

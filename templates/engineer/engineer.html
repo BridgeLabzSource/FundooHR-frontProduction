@@ -68,19 +68,19 @@
                       <!-- <span class="pull-right glyphicon glyphicon-calendar"></span> -->
                       <!-- <span class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span> -->
                   <ul class="nav navbar-nav">
-                      <li ng-class="{active: $state.includes('details.attendance')}"><a ui-sref="details.attendance"><strong>Attendance</strong><i
+                      <li ng-class="{active: $state.includes('engineer.attendance')}"><a ui-sref="engineer.attendance"><strong>Attendance</strong><i
                               class=" pull-right fa fa-calendar fa-lg" aria-hidden="true"></i></a></li>
-                      <li ng-class="{active: $state.includes('details.personal')}"><a ui-sref="details.personal"><strong>Personal</strong><span class="pull-right showopacity glyphicon glyphicon-user"></span></a></li>
-                      <li ng-class="{active: $state.includes('details.profile')}"><a ui-sref="details.profile"><strong>Profile</strong><i class="pull-right fa fa-camera-retro fa-lg"></i></a></li>
-                      <li ng-class="{active: $state.includes('details.hrData')}"><a ui-sref="details.hrData"><strong>HR Data</strong><i class="pull-right fa fa-address-book-o" aria-hidden="true"></i></a></li>
-                      <li ng-class="{active: $state.includes('details.bank')}"><a ui-sref="details.bank"><strong>Bank</strong><i class="pull-right showopacity fa fa-university" aria-hidden="true"></i></a></li>
-                      <li ng-class="{active: $state.includes('details.tracking')}"><a ui-sref="details.tracking"><strong>Tracking</strong><i class="pull-right showopacity fa fa-bandcamp" aria-hidden="true"></i></a></li>
+                      <li ng-class="{active: $state.includes('engineer.personal')}"><a ui-sref="engineer.personal"><strong>Personal</strong><span class="pull-right showopacity glyphicon glyphicon-user"></span></a></li>
+                      <li ng-class="{active: $state.includes('engineer.profile')}"><a ui-sref="engineer.profile"><strong>Profile</strong><i class="pull-right fa fa-camera-retro fa-lg"></i></a></li>
+                      <li ng-class="{active: $state.includes('engineer.hrData')}"><a ui-sref="engineer.hrData"><strong>HR Data</strong><i class="pull-right fa fa-address-book-o" aria-hidden="true"></i></a></li>
+                      <li ng-class="{active: $state.includes('engineer.bank')}"><a ui-sref="engineer.bank"><strong>Bank</strong><i class="pull-right showopacity fa fa-university" aria-hidden="true"></i></a></li>
+                      <li ng-class="{active: $state.includes('engineer.tracking')}"><a ui-sref="engineer.tracking"><strong>Tracking</strong><i class="pull-right showopacity fa fa-bandcamp" aria-hidden="true"></i></a></li>
                   </ul>
               </nav>
       </div>
   </div>
   <div class="col-lg-9 col-sm-9 col-xs-9">
-    <ui-view></ui-view>
+    <div ui-view></div>
   </div>
 </div>
 <!-- <script src="js/toggle.js"></script> -->
