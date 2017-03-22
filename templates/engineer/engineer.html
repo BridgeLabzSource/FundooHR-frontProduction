@@ -3,7 +3,8 @@
     <div id="emp-profile" ng-init="getEmployeeData();">
       <div id="emp-details">
           <div id="emp-image">
-              <img src="images/bprofile.jpg" alt="{{empdetails.employeeName}}">
+              <!-- <img src="images/bprofile.jpg" alt="{{empdetails.employeeName}}"> -->
+              <img ng-src="{{empdetails.imageUrl}}" alt="{{empdetails.employeeName}}">
               <!--<img ng-src="images/logo.png"/>-->
           </div>
           <div id="emp-info">
