@@ -23,20 +23,16 @@ angular.module('mainApp').controller('personalCtrl',function($scope, $rootScope,
 
     restService.httpRequest('readEmployeePersonalData', getconfig ,"get")
         .then(function(data) {
-            console.log("employeeData", data.data.personalData);
-            $scope.personalArray = data.data.personalData;
-            $scope.personalArray.engineerId = engineerId;
-            $rootScope.employeeArray = data.data.employeeData;
-            $rootScope.profileId = engineerId;
+            $scope.personalData = data.data.personalData;
+            $scope.personalData.engineerId = engineerId;
+            $rootScope.empdetails = data.data.employeeData;
         });
 
 
     //Editable Page
     $scope.saveTable = function() {
-        //  console.log($scope.personalArray);
-
         //UPDATING DATA
-        restService.httpRequest('updateEmployeePersonalData', $scope.personalArray,"put")
+        restService.httpRequest('updateEmployeePersonalData', $scope.personalData,"put")
             .then(function(response) {
                 //console.log("success");
                 $state.reload();

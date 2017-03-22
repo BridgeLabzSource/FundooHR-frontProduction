@@ -635,3 +635,107 @@ nav.sidebar,
     white-space: nowrap;
     margin-left: 55px;
 }
+/*=====adding=====*/
+ #personalData{
+            margin-top: 0px;
+            height: 275px;
+ }
+@media(max-width:768px){
+    #formsize{
+  overflow-y: scroll;
+     height: 320px;
+    margin-top: 10px;
+ }
+
+ #personalData{
+             margin-left: 80px;
+ }
+
+}
+.table-condensed>tbody>tr>td{
+    padding:0px!important;
+}
+#emp-profile{
+    overflow:hidden;
+}
+
+.editable-empty{
+    font-style: italic;
+    color:#3B5372!important;
+    text-decoration: none
+}
+
+
+
+@media(max-width:468px){
+    #emp-info{
+    margin-top: 1px;
+    margin-left: 0px;
+}
+#emp-profile{
+    top: 45px;
+    padding-top: 20px;
+}
+#line{
+    top: 530px;
+    margin-top: 0px!important;
+}
+#emp-image{
+    margin-left:60px!important;
+}
+#emp-personal td:nth-child(2){
+    padding-left: 70px!important;
+}
+#emp-company td:nth-child(2){
+    padding-left: 10px!important;
+}
+}
+
+#icon{
+    width:10px;
+
+
+    border: 0px solid transparent!important;
+}
+
+#menu-toggle .btn-default:hover{
+    border: 0px solid transparent!important;
+    background-color: #FFFFFF!important;
+}
+#menu-toggle .btn-default:active{
+    border: 0px solid transparent!important;
+    background-color: #FFFFFF!important;
+}
+#menu-toggle .btn{
+        padding: 6px 6px!important;
+        border: 0px solid transparent!important;
+        background-color: #FFFFFF!important;
+}
+.selected {
+    border-bottom: solid 2px #3B5372;
+  }
+
+  .navbar-default .navbar-nav>.active>a{
+      background-color: transparent!important;
+  }
+#padrow{
+    margin-top: 0px;
+}
+
+#dashrow{
+          margin-left: 15px!important;
+    margin-right: -100px!important;
+  }
+
+
+  #emp-name{
+      color:#3B5372;
+      font-weight:bold;
+      font-family:Ionicons;
+      font-size:20px;
+  }
+
+  /*#emp-id{
+      color:#3B5372;
+      font-weight:bold;
+  }*/

@@ -1,9 +1,9 @@
-<div ng-controller='PersonalCtrl' id="personalCtrl">
+<div id="personalCtrl">
 <form editable-form name="tableform" onaftersave="saveTable()" id="formsize" ng-init="getPersonalData();">
         <table class="table-condensed"  id="personalData">
                 <tr>
                     <td id="spantd">ID</td>
-                     <td><span editable-text="personalData.engineerId"  e-focus-me="personalData.isFocused" e-form="tableform">{{personalData.engineerId || '--'}}</span></td>
+                     <td><span>{{personalData.engineerId || '--'}}</span></td>
                 </tr>
                 <tr>
                     <td id="spantd">Email</td>

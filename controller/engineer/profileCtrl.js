@@ -4,7 +4,7 @@
  *@param {string} profileCtrl - parameter refers to the controller used by HTML element
  *@param {function} selfInvoked- dependencies are added in it
  */
-angular.module('mainApp').controller('profileCtrl', function ($scope,$rootScope,$stateParams,restService){
+angular.module('mainApp').controller('profileCtrl', function ($scope,$rootScope,$stateParams,restService,$state){
   var query = {
       engineerId:$stateParams.engineerId
   };
@@ -12,8 +12,17 @@ angular.module('mainApp').controller('profileCtrl', function ($scope,$rootScope,
 var promise = restService.httpRequest('readEmployeeProfileData', query,"get");
 promise.then(function(data) {
     var dashData = data.data;
-    $scope.dashData = dashData;
     $rootScope.empdetails = dashData.employeeData;
-    $scope.profileEngArray = dashData.profileData;
+    $scope.profileData = dashData.profileData;
+    $scope.profileData.engineerId = $stateParams.engineerId;
 });
+//update the Profile details of the employee
+$scope.saveTable = function() {
+    //UPDATING DATA
+    restService.httpRequest('updateEmployeeProfileData', $scope.profileData,"put")
+        .then(function(response) {
+            //console.log("success");
+            $state.reload();
+        });
+};
 });

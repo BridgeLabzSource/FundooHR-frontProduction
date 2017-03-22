@@ -61,7 +61,7 @@ angular.module('mainApp')
                 scope: $scope,
                 preserveScope: true,
                 disableParentScroll: false,
-                controller: function($scope) {
+                controller: function($scope,$state) {
                   $scope.show=(attendanceStatus === "Present"); //To show template on screen
 
                     $scope.save = function() {
@@ -76,6 +76,7 @@ angular.module('mainApp')
                         storeAttendence.reason = (attendanceStatus !== "Present"?$scope.reason:"");
                         restService.httpRequest("createEmployeeDayAttendance",storeAttendence,"post").then(function (){
                           alert("success");
+                                      $state.reload();
                         });
                         console.log(storeAttendence);
                         item[dataNumber.number] = storeAttendence;
