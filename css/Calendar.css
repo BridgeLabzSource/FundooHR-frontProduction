@@ -44,10 +44,11 @@ span {
 
 @border-colour: #d8d1c7;
 .attendanceSummaryCalendar {
-    float: left;
-    display: block;
+    /*float: left;*/
+    margin: auto;
+    display: table;
     background: white;
-    font-family: Applegothic;
+    font-family: MyriadPro-Light;
     border: solid 4px @border-colour;
     margin-top: 150px;
     border-radius: 8px;
