@@ -1,6 +1,6 @@
-@header-height: 50px;
-.header {
-    height: @header-height;
+@header-month-height: 50px;
+.header-month {
+    height: @header-month-height;
     font-size: 30px;
     color: #3b5372;
 >i.fa-angle-right {
@@ -43,14 +43,14 @@ span {
 }
 
 @border-colour: #d8d1c7;
+
 .attendanceSummaryCalendar {
-    /*float: left;*/
     margin: auto;
     display: table;
     background: white;
     font-family: MyriadPro-Light;
     border: solid 4px @border-colour;
-    margin-top: 150px;
+    margin-top: 30px;
     border-radius: 8px;
     border-width: #18880d 3px;
     border-color: #6fb8d9;
@@ -76,4 +76,12 @@ span.day {
  }
 }
 }
+}
+
+.header-month{
+    margin-top: 150px;
+}
+
+.month{
+    padding : 30px;
 }

@@ -33,7 +33,7 @@ angular.module("mainApp").directive("appcalendar", function()
                     _buildMonth(scope, start, scope.month);
                  }
               });
-            //create  next and previous month calander object with timestamp generate
+            //create  next and previous month calender object with timestamp generate
             scope.next = function() {
             scope.called = 0;
             var next = scope.month.clone();

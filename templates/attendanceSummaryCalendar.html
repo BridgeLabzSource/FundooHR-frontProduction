@@ -1,6 +1,6 @@
-<div class="header">
-    <i class="fa fa-angle-left" ng-click="previous()"></i>
-    <span>{{month.format("MMMM, YYYY")}}</span>
+<div class="header-month">
+    <i class="fa fa-angle-left" ng-click="previous()"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="month">{{month.format("MMMM, YYYY")}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
     <i class="fa fa-angle-right" ng-click="next()"></i>
 </div>
 
@@ -16,18 +16,30 @@
         <span class="day">Sat</span>
     </div>
     <div class="week" ng-repeat="week in weeks">
+        <span class="day" ng-repeat="day in week.days" ng-if="!day.number"
+              ng-click="clickDay(day.date)">
+            <span>{{day.number}} <br/>
+        <label  ng-style="{color:(day.unmarked==='-'?'#18880d':'#E35656')}"></label>
+        </span>
+        </span>
         <!-- If -->
-        <span class="day" ng-repeat="day in week.days" ng-if="day.unmarked==='-'" >
+        <span class="day" ng-repeat="day in week.days" ng-if="day.unmarked==='-' && day.number" >
         <span>{{day.number}} <br/>
         <label  ng-style="{color:(day.unmarked==='-'?'#18880d':'#E35656')}">{{day.unmarked}}/{{day.totalEmployee}}</label>
         </span>
         </span>
         <!-- else -->
-        <span class="day" ng-repeat="day in week.days" ng-if="day.unmarked!=='-'" ng-click="clickDay(day.date)">
-        <span>{{day.number}} <br/>
+        <span class="day" ng-repeat="day in week.days" ng-if="day.unmarked!='-' && day.number"
+              ng-click="clickDay(day.date)">
+            <span>{{day.number}} <br/>
         <label  ng-style="{color:(day.unmarked==='-'?'#18880d':'#E35656')}">{{day.unmarked}}/{{day.totalEmployee}}</label>
         </span>
         </span>
+        <!--<span class="day" ng-repeat="week in weeks" ng-if="$last">-->
+            <!--<span>{{day.number}} <br/>-->
+        <!--<label  ng-style="{color:(day.unmarked==='-'?'#18880d':'#E35656')}">{{day.unmarked}}/{{day.totalEmployee}}</label>-->
+        <!--</span>-->
+        <!--</span>-->
         <span><a ui-sref="home.calandar"></a></span><br>
     </div>
 </div>
