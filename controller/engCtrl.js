@@ -13,7 +13,7 @@ angular.module('mainApp').controller('engineerMainCtrl', function ($scope, utilS
         $scope.dataLoading = true; // data loading icon...
 
         //restService call for fetching data
-        restService.getRequest('searchEmployeeByName').then(function (data) {
+        restService.httpRequest('searchEmployeeByName',null,'get').then(function (data) {
             data = utilService.sortingByName(data);//sorting by name
             $scope.profile = utilService.createSection(data);//creating section
             $scope.dataLoading = false;

@@ -3,7 +3,7 @@ var hrDashData={ email :/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([
  pwd :/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
 
 /**login path*/
-config:{ method: 'POST', url: 'http://192.168.0.40:3000/login' },
+config:{ method: 'POST', url: 'http://192.168.0.60:3000/login' },
 
 dashBoardData :["Engineers","Clients","Reports"],
 

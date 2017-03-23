@@ -7,11 +7,11 @@ angular.module('mainApp').directive("calendar", function ($rootScope, $http, $md
             data: "="
         },
         link: function (scope,element,controller) {
-          //console.log(scope,element,controller);
+            //console.log(scope,element,controller);
             scope.readData(Date.now());
             scope.inc = 0;
             scope.$watch("attendance", function (data, newData) {
-              console.log(scope.attendance);
+                console.log(scope.attendance);
                 console.log("called link" + scope.inc++);
 
                 if (scope.called === undefined) {
@@ -19,7 +19,7 @@ angular.module('mainApp').directive("calendar", function ($rootScope, $http, $md
                     scope.month = scope.selected.clone();
                     var start = scope.selected.clone();
                     start.date(1);
-                    _removeTime(start.day(0));
+                    _removeTime(start.day(0));a
                     _buildMonth(scope, start, scope.month);
 
                 } else if (scope.called === 0) {
@@ -55,20 +55,20 @@ angular.module('mainApp').directive("calendar", function ($rootScope, $http, $md
                     //     .disableParentScroll(false)
                     // );
                     $mdDialog.show({
-                            controller: function(scope){
-                                scope.punchIn = day.status.punchIn;
-                                scope.punchOut = day.status.punchOut;
-                                scope.cancel = function(){
-                                   $mdDialog.cancel();
-                                };
-                            },
-                            templateUrl: 'partials/presentPopUp.html',
-                            parent: angular.element(document.querySelector('#popupContainer')),
-                            targetEvent: ev,
-                            clickOutsideToClose: true,
-                            disableParentScroll: false
+                        controller: function(scope){
+                            scope.punchIn = day.status.punchIn;
+                            scope.punchOut = day.status.punchOut;
+                            scope.cancel = function(){
+                                $mdDialog.cancel();
+                            };
+                        },
+                        templateUrl: 'partials/presentPopUp.html',
+                        parent: angular.element(document.querySelector('#popupContainer')),
+                        targetEvent: ev,
+                        clickOutsideToClose: true,
+                        disableParentScroll: false
 
-                        })
+                    })
                         .then(function (answer) {
                             scope.status = 'You said the information was "' + answer + '".';
                         }, function () {
@@ -87,21 +87,21 @@ angular.module('mainApp').directive("calendar", function ($rootScope, $http, $md
                     //     .disableParentScroll(false)
                     // );
                     $mdDialog.show({
-                            controller: function(scope){
-                                console.log("Called ",day);
-                                scope.reason = day.status.reason;
-                                scope.cancel = function(){
-                                    console.log("called");
-                                   $mdDialog.cancel();
-                                };
-                            },
-                            templateUrl: 'partials/absentPopUp.html',
-                            parent: angular.element(document.querySelector('#popupContainer')),
-                            targetEvent: ev,
-                            clickOutsideToClose: true,
-                            disableParentScroll: false
+                        controller: function(scope){
+                            console.log("Called ",day);
+                            scope.reason = day.status.reason;
+                            scope.cancel = function(){
+                                console.log("called");
+                                $mdDialog.cancel();
+                            };
+                        },
+                        templateUrl: 'partials/absentPopUp.html',
+                        parent: angular.element(document.querySelector('#popupContainer')),
+                        targetEvent: ev,
+                        clickOutsideToClose: true,
+                        disableParentScroll: false
 
-                        })
+                    })
                         .then(function (answer) {
                             // $scope.status = 'You said the information was "' + answer + '".';
                         }, function () {

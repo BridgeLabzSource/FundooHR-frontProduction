@@ -3,11 +3,11 @@
  * CreatedBy: Prashant Praveen
 
  */
-angular.module("mainApp").directive("calendar", function()
+angular.module("mainApp").directive("appcalendar", function()
 {
     return {
         restrict: "E",
-        templateUrl: "templates/Calendar.html",
+        templateUrl: "templates/attendanceSummaryCalendar.html",
         link: function(scope) {
             /*watch service is used to watch the changes in old and the new Data*/
 
@@ -53,7 +53,6 @@ angular.module("mainApp").directive("calendar", function()
         controller: function($http, $scope, $stateParams, $state, restService,$filter, $rootScope) {
 
             // $scope.day = moment();
-            console.log('inside directive Calendar');
             $scope.selected=moment();
             console.log($scope.selected);
             var token = localStorage.getItem('satellizer_token');
@@ -74,9 +73,10 @@ angular.module("mainApp").directive("calendar", function()
             var config = {
                   "x-token": token
             }
-            restService.getRequest('readMonthlyAttendanceSummary', query,
-            config).then(function(data)
+            restService.httpRequest('readMonthlyAttendanceSummary', query,
+            "get").then(function(data)
             {
+                console.log(data);
                 $scope.attendance = {};
                 data.data.attendance.forEach(function(value, key) {
                 $scope.attendance[value.day] = {
@@ -95,8 +95,8 @@ angular.module("mainApp").directive("calendar", function()
                 var config = {
                     "x-token": token
                 }
-                restService.getRequest('readMonthlyAttendanceSummary', query,
-                 config).then(function(data) {
+                restService.httpRequest('readMonthlyAttendanceSummary', query,
+                    "get").then(function(data) {
                   $scope.attendance = {};
                     data.data.attendance.forEach(function(value, key) {
                     $scope.attendance[value.day] = {

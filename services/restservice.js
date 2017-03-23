@@ -1,5 +1,5 @@
 angular.module('mainApp').service('restService', function ($http, $log, $q, localStorageService) {
-    this.baseUrl = "http://192.168.0.40:3000/";
+    this.baseUrl = "http://192.168.0.05:3000/";
     var self = this;
 
     //    function for httpRequest for all methods

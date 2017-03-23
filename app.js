@@ -150,7 +150,7 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                     templateUrl: 'templates/home.html'
                 },
                 home: {
-                    template: '<calender>hello</calender>'
+                    template: '<appcalendar></appcalendar>'
                 }
             },
             resolve: {
