@@ -64,7 +64,7 @@ angular.module("mainApp").directive("appcalendar", function () {
                 $state.go("attendance.umarked", {timeStamp:timeStamp});
             };
             var query = {
-                timeStamp
+                timeStamp:timeStamp
             };
             var config = {
                 "x-token": token
@@ -85,7 +85,7 @@ angular.module("mainApp").directive("appcalendar", function () {
             //read umarked employee data for next and previous month buid
             $scope.readUnmark = function (timeStamp) {
                 var query = {
-                    timeStamp
+                    timeStamp:timeStamp
                 };
                 var config = {
                     "x-token": token
