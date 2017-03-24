@@ -56,23 +56,6 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                 loginRequired: loginRequired
             }
         })
-        // .state('engineer', {
-        //     url: '/engineer',
-        //     views: {
-        //         nav: {
-        //             templateUrl: 'templates/home.html'
-        //         },
-        //         home: {
-        //             template: '<ui-view></ui-view>',
-        //             controller : function ($state) {
-        //                 $state.go('engineer.search');
-        //             }
-        //         }
-        //     },
-        //     resolve: {
-        //         loginRequired: loginRequired
-        //     }
-        // })
         .state('engineer', {
             url: '/engineer',
             views: {
@@ -150,9 +133,24 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                     templateUrl: 'templates/home.html'
                 },
                 home: {
-                    template: '<appcalendar></appcalendar>'
+                    template: '<ui-view></ui-view>',
+                    controller: 'attendanceSummaryCtrl'
                 }
             },
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('attendance.month', {
+            url: '/month',
+            template: '<appcalendar></appcalendar>',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('attendance.umarked', {
+            url: '/unmarked/:timeStamp',
+            template: '<br><br><br><h1>Pranali</h1>',
             resolve: {
                 loginRequired: loginRequired
             }

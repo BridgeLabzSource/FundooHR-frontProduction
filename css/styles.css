@@ -353,7 +353,7 @@ and (max-device-width : 1024px) {
     letter-spacing: 0px;
     font-weight: bold;
     vertical-align: middle;
-    margin-top: 35px;
+    margin-top: 85px;
 }
 
 .toc{
@@ -409,7 +409,7 @@ and (max-device-width : 1024px) {
     color: rgba(227, 86, 86, 1);
 }
 #dash-attendanceSummary{
-    margin-top:15px;
+    margin-top:30px;
     width:100%;
 
     }
@@ -435,7 +435,7 @@ and (max-device-width : 1024px) {
     letter-spacing: 0.5px;
 }
 #dash-attendanceFallout{
-    margin-top : -10px;
+    margin-top : 10px;
 }
 #falloutEmp{
     width: 75px;
@@ -455,7 +455,7 @@ and (max-device-width : 1024px) {
     letter-spacing: 0.5px;
 }
 #dash-leaveSummary{
-    margin-top : -10px;
+    margin-top : 10px;
 }
 #empLeave{
     width: 75px;
