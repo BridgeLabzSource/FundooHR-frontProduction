@@ -17,6 +17,23 @@ span {
 }
 }
 
+.header-month{
+    margin-top: 150px;
+}
+
+.month{
+    padding : 30px;
+}
+
+.counts{
+    font-family: MyriadPro-Light;
+    padding-top: 15px;
+}
+
+.date{
+    padding-top: 3px;
+}
+
 .vertical-centre (@height) {
     height: @height;
     display: inline-block;
@@ -33,12 +50,18 @@ span {
         margin-left: 100px;
         width: 65%;
     }
+    .counts{
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 724px) {
     .attendanceSummaryCalendar {
         margin-left: 0px;
         width: 100%;
+    }
+    .counts{
+        font-size: 12px;
     }
 }
 
@@ -66,7 +89,7 @@ span.day {
 .border-box;
     border-left: solid 2px @border-colour;
     font-size: 17px;
-    font-family: serif;
+    font-family: MyriadPro-Light;
     text-align: center;
 .vertical-centre(70px);
     background: white;
@@ -78,10 +101,3 @@ span.day {
 }
 }
 
-.header-month{
-    margin-top: 150px;
-}
-
-.month{
-    padding : 30px;
-}

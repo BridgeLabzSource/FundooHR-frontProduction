@@ -20,15 +20,16 @@
         <!-- If -->
         <span class="day" ng-repeat="day in week.days" ng-if="day.unmarked==='-'" >
         <span>{{day.number}} <br/>
-        <label  ng-style="{color:(day.unmarked==='-'?'#18880d':'#E35656')}">{{day.unmarked}}<span ng-if="day.number">/</span>{{day.totalEmployee}}
+        <label  ng-style="{color:(day.unmarked==='-'?'#18880d':'#E35656')}" class="counts">{{day.unmarked}}<span
+                ng-if="day.number">/</span>{{day.totalEmployee}}
         </label>
         </span>
         </span>
         <!-- else -->
         <span class="day" ng-repeat="day in week.days" ng-if="day.unmarked!='-'"
               ng-click="clickDay(day.date)">
-            <span>{{day.number}} <br/>
-        <label  ng-style="{color:(day.unmarked==='-'?'#18880d':'#E35656')}">{{day.unmarked}}<span
+            <span>{{day.number}}<br/>
+        <label  ng-style="{color:(day.unmarked==='-'?'#18880d':'#E35656')}" class="counts">{{day.unmarked}}<span
                 ng-if="day.number">/</span>{{day.totalEmployee}}
         </label>
         </span>

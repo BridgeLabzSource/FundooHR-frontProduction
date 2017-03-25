@@ -6,6 +6,10 @@ body{
     left:0;
     bottom:0;
 }
+.canvas{
+    background-color: white;
+    background-size: cover;
+}
 #login-page{
     height:100%;
     width: 100%;

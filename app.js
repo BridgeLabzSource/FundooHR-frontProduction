@@ -149,8 +149,9 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
             }
         })
         .state('attendance.umarked', {
-            url: '/unmarked/:timeStamp',
-            template: '<br><br><br><br><br><br><h1>Pranali</h1>',
+            url: '/month/unmarked/:timeStamp',
+            templateUrl: 'templates/unmarkedEmp.html',
+            controller : 'unmarkedEmp',
             resolve: {
                 loginRequired: loginRequired
             }
