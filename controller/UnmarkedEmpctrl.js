@@ -9,12 +9,9 @@ angular.module('mainApp').controller('unmarkedEmp', function ($scope, $statePara
     restService.httpRequest('readUnmarkedAttendanceEmployee',
         query, "get").then(function (data) {
             console.log('res ',data);
-        // $scope.totalEmployee = data.data.totalEmployee;
-        // $scope.unmarkedNumber = data.data.unmarkedNumber;
-        // $scope.display = "umarkedEmployee";
-        // $scope.items = data.data.umarkedEmployee;
-        // $scope.imageUrl = data.data.imageUrl;
-        // $scope.display = "umarkedEmployee";
+        $scope.totalEmployee = data.data.totalEmployee;
+        $scope.unmarkedNumber = data.data.unmarkedNumber;
+        $scope.unmarkedData = data.data.umarkedEmployee;
     });
     // $scope.confirm = function () {
     //     var token = localStorage.getItem('satellizer_token');
