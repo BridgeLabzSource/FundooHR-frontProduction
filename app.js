@@ -56,18 +56,6 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                 loginRequired: loginRequired
             }
         })
-        // .state('engineer', {
-        //     url: '/engineer',
-        //     views: {
-        //         nav: {
-        //             templateUrl: 'templates/home.html'
-        //         },
-
-        //     },
-        //     resolve: {
-        //         loginRequired: loginRequired
-        //     }
-        // })
         .state('engineer', {
             url: '/engineer',
             views: {
@@ -166,9 +154,25 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                     templateUrl: 'templates/home.html'
                 },
                 home: {
-                    template: '<calender>hello</calender>'
+                    template: '<ui-view></ui-view>',
+                    controller: 'attendanceSummaryCtrl'
                 }
             },
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('attendance.month', {
+            url: '/month',
+            template: '<appcalendar></appcalendar>',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        .state('attendance.umarked', {
+            url: '/month/unmarked/:timeStamp',
+            templateUrl: 'templates/unmarkedEmp.html',
+            controller : 'unmarkedEmp',
             resolve: {
                 loginRequired: loginRequired
             }

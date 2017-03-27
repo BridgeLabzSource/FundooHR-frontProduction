@@ -1,0 +1,13 @@
+<div class="row dateline">
+        <span class="glyphicon glyphicon-menu-left pull-left" style="color:rgba(59, 83, 114, 1);position: absolute"></span>
+        <span class="dateFallout"
+              style="color:rgba(59, 83, 114, 1);position: absolute;left:45%"><h3>{{date}}</h3></span>
+        <span class="glyphicon glyphicon-menu-right pull-right"
+              style="color:rgba(59, 83, 114, 1);position: absolute;right:0"></span>
+</div>
+
+<div class="row cardEmp">
+    <div ng-repeat="info in unmarkedData" id="card-col">
+        <card-info data="info"></card-info>
+    </div>
+</div>

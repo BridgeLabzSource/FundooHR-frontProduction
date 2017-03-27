@@ -7,7 +7,7 @@ angular.module('mainApp').directive("attendanceCalendar", function ($rootScope, 
             data: "="
         },
         link: function (scope,element,controller) {
-          //console.log(scope,element,controller);
+            //console.log(scope,element,controller);
             scope.readData(Date.now());
             scope.inc = 0;
             scope.$watch("attendance", function (data, newData) {
@@ -16,7 +16,7 @@ angular.module('mainApp').directive("attendanceCalendar", function ($rootScope, 
                     scope.month = scope.selected.clone();
                     var start = scope.selected.clone();
                     start.date(1);
-                    _removeTime(start.day(0));
+                    _removeTime(start.day(0));a
                     _buildMonth(scope, start, scope.month);
 
                 } else if (scope.called === 0) {

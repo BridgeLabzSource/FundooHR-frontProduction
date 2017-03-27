@@ -13,11 +13,12 @@ angular.module('mainApp')
     $scope.readData=function(timeStamp){
       var query = {
           timeStamp: timeStamp,
-          engineerId:$stateParams.engineerId
+          engineerId:'40001EI'
       };
       // restService call for Engineer Attendence data..
     var promise = restService.httpRequest('readEmployeeMonthlyAttendance', query,"get");
-    promise.then(function(data) {
+
+        promise.then(function(data) {
         var dashData = data.data;
         $scope.dashData = dashData;
         $rootScope.empdetails = dashData.employeeData;
