@@ -766,31 +766,84 @@ and (max-device-width : 1024px) {
     width: 100%;
     top: 70px;
     position: relative;
+
 }
 
-.symbol{
-    height: 20px;
-    width: 20px;
+.countline{
+    width: 100%;
+    top: 30px;
+    position: relative;
+
 }
 
-.dateFallout{
+
+
+.symbol1{
+    margin-left: 30px;
+}
+
+.symbol2{
+    margin-right: 50px;
+}
+
+.dateFallout > h3 {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 24px;
+    margin: auto;
+    top : -20px;
 }
 
-@media (max-width: 700px) {
-    .symbol{
-        height: 20px;
-        width: 20px;
+.unmarkCount {
+    color : crimson;
+    margin-top: 30px;
+    margin-left: 46%;
+}
+
+.redcount {
+    height : 30px;
+    width : 50px;
+    background-color: crimson;
+    color: white;
+    font-weight: 800;
+    border-radius: 25px;
+    padding: 7px;
+}
+
+@media (max-width: 760px) {
+    .symbol2 {
+        margin-right: -20px;
+    }
+    .symbol1,.symbol2{
+        margin-top: 40px;
     }
 
-    .dateFallout{
+    .dateFallout > h3{
         font-weight: 800;
-        font-size: 15px;
+        font-size: 20px;
+        margin-top: 37px;
+        margin-right: 10px;
+    }
+    .countline {
+        margin-top: 110px;
+
     }
 
+
 }
+
+@media (max-width: 320px) {
+    .dateFallout > h3{
+        font-weight: 800;
+        font-size: 18px;
+        margin-top: 37px;
+        left : 40%;
+    }
+    .countline {
+        margin-top: 110px;
+    }
+}
+
 
 .cardEmp{
-    margin-top: 170px;
+    margin-top: 80px;
 }

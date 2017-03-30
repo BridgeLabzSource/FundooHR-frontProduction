@@ -14,6 +14,10 @@ angular.module('mainApp').controller('unmarkedEmp', function ($scope, $statePara
         $scope.unmarkedNumber = data.data.unmarkedNumber;
         $scope.unmarkedData = data.data.umarkedEmployee;
     });
+
+    $scope.previous = function(){
+        $state.go('attendance.month');
+    };
     // $scope.confirm = function () {
     //     var token = localStorage.getItem('satellizer_token');
     //     // $scope.today = new Date();
