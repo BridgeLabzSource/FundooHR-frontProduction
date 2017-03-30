@@ -1,12 +1,20 @@
+.special-content {
+    margin:0 -100px;
+    /*padding:0 1000px;*/
+     position:absolute;
+    width:100%;
+    /*border:1px solid #000;*/
+}
 body {
     overflow-x: hidden;
 }
 nav.sidebar.navbar {
     border-radius: 0px;
     border-color: #3b5372;
+    height: inherit!important;
 }
 #sidebar-wrapper{
-  margin-top: 270px
+  margin-top: 7px
 }
 nav.sidebar:hover {
   background-color: #3b5372;
@@ -478,9 +486,9 @@ nav.sidebar,
 }
 
 #line {
-    position: fixed;
+    /*position: fixed;*/
     right: 0;
-    margin-top: 267px;
+    margin-top: 6px;
     left: 0;
     border-top: solid 2px #D8D1C7;
 }
@@ -508,9 +516,9 @@ nav.sidebar,
     }
 }
 
-#emp-profile {
+/*#emp-profile {
     position: fixed;
-}
+}*/
 
 /*#wrapper {
     margin-top: 203px;

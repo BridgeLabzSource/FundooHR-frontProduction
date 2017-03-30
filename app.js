@@ -75,7 +75,7 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                     templateUrl: 'templates/home.html'
                 },
                 home: {
-                    template: '<ui-view></ui-view>',
+                    template: '<ui-view class="special-content"></ui-view>',
                 }
             },
             resolve: {
