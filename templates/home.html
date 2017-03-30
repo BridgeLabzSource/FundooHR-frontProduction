@@ -40,7 +40,7 @@
             <ul class="nav navbar-nav " id="nav-content">
                 <li ng-class="{active: isActive('/dashboard')}"><a ui-sref="dashboard">Home</a></li>
                 <li ng-class="{active: $state.includes('engineer')}"><a ui-sref="engineer.search">Engineers</a></li>
-                <li ng-class="{active: isActive('/attendance')}"><a ui-sref="attendance">Attendance</a></li>
+                <li ng-class="{active: $state.includes('attendance')}"><a ui-sref="attendance">Attendance</a></li>
                 <li ng-class="{active: isActive('/atten')}"><a ui-sref="atten">Clients</a></li>
 
                 <li><a ui-sref="Reports">Reports</a></li>

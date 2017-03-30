@@ -69,7 +69,7 @@ angular.module("mainApp").directive("appcalendar", function () {
 
             restService.httpRequest('readMonthlyAttendanceSummary', query,"get").then(function(data)
             {
-
+                console.log(data);
                 $scope.attendance = {};
                 data.data.attendance.forEach(function (value, key) {
                     $scope.attendance[value.day] = {
