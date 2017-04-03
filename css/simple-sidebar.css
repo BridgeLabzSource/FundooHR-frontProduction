@@ -1,135 +1,142 @@
 .special-content {
-    margin:0 -100px;
+    margin: 0 -100px;
     /*padding:0 1000px;*/
-     position:absolute;
-    width:100%;
+    position: absolute;
+    width: 100%;
     /*border:1px solid #000;*/
 }
+
 body {
     overflow-x: hidden;
 }
+
 nav.sidebar.navbar {
     border-radius: 0px;
     border-color: #3b5372;
     height: inherit!important;
 }
-#sidebar-wrapper{
-  margin-top: 7px
-}
-nav.sidebar:hover {
-  background-color: #3b5372;
+
+#sidebar-wrapper {
+    margin-top: 7px
 }
 
-nav.sidebar,
-.main {
+nav.sidebar:hover {
+    background-color: #3b5372;
+}
+
+nav.sidebar, .main {
     -webkit-transition: margin 200ms ease-out;
     -moz-transition: margin 200ms ease-out;
     -o-transition: margin 200ms ease-out;
     transition: margin 200ms ease-out;
 }
+
+
 /* Add gap to nav and right windows.*/
 
 .main {
     padding: 10px 10px 0 10px;
 }
-@media (max-width:767px) {
-  /*Allow main to be next to Nav*/
-  .custom-margin{
-    margin-top: 0px!important;
-  }
-  .main {
-      position: absolute;
-      width: calc(100% - 40px);
-      /*keeps 100% minus nav size*/
-      margin-left: 40px;
-      float: right;
-  }
-  #sidebar-wrapper{
-    margin-top: -10px
-  }
-  /*lets nav bar to be showed on mouseover*/
-  nav.sidebar:hover+.main {
-      margin-left: 00px;
-  }
-  /*Center Brand*/
-  nav.sidebar.navbar.sidebar>.container .navbar-brand,
-  .navbar>.container-fluid .navbar-brand {
-      margin-left: 0px;
-  }
-  /*Center Brand*/
-  nav.sidebar .navbar-brand,
-  nav.sidebar .navbar-header {
-      text-align: center;
-      width: 100%;
-      margin-left: 0px;
-  }
-  /*Center Icons*/
-  nav.sidebar a {
-      padding-right: 13px;
-  }
-  /*adds border top to first nav box */
-  nav.sidebar .navbar-nav>li:first-child {
-    background-color: #3b5372;
-      border-top: 1px #3b5372 solid;
-  }
-  /*adds border to bottom nav boxes*/
-  nav.sidebar .navbar-nav>li {
-      border-bottom: 1px #3b5372 solid;
-  }
-  /* Colors/style dropdown box*/
-  nav.sidebar .navbar-nav .open .dropdown-menu {
-      position: static;
-      float: none;
-      width: auto;
-      margin-top: 0;
-      background-color: transparent;
-      border: 0;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-  }
-  /*allows nav box to use 100% width*/
-  nav.sidebar .navbar-collapse,
-  nav.sidebar .container-fluid {
-      padding: 0 0px 0 0px;
-  }
-  /*colors dropdown box text */
-  .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-      color: #777;
-  }
-  /*gives sidebar width/height*/
-  nav.sidebar {
-      width: 200px;
-      margin-left: -180px;
-      float: left;
-      z-index: 8000;
-      margin-bottom: 0px;
-      }
-  /*give sidebar 100% width;*/
-  nav.sidebar li {
-      width: 100%;
-  }
-  /** Setting Backgound of navigation**/
-  nav.sidebar a {
-    background-color: #3b5372;
-      /*padding-right: 13px;*/
-  }
-  nav.sidebar .active>a {
-    background-color: #3b5372!important;
-      /*padding-right: 13px;*/
-  }
-  /* Move nav to full on mouse over*/
-  nav.sidebar:hover {
-    background-color: #3b5372!important;
-      margin-left: 0px;
-  }
-  /*for hiden things when navbar hidden*/
-  .forAnimate {
-      opacity: 0;
-  }
 
+@media (max-width:767px) {
+    /*Allow main to be next to Nav*/
+    .custom-margin {
+        margin-top: 0px!important;
+        margin-left: 80px;
+        margin-right: -60px;
+    }
+    .main {
+        position: absolute;
+        width: calc(100% - 40px);
+        /*keeps 100% minus nav size*/
+        margin-left: 40px;
+        float: right;
+    }
+    #sidebar-wrapper {
+        margin-top: -10px
+    }
+    /*lets nav bar to be showed on mouseover*/
+    nav.sidebar:hover+.main {
+        margin-left: 00px;
+    }
+    /*Center Brand*/
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 0px;
+    }
+    /*Center Brand*/
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header {
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
+    }
+    /*Center Icons*/
+    nav.sidebar a {
+        padding-right: 13px;
+    }
+    /*adds border top to first nav box */
+    nav.sidebar .navbar-nav>li:first-child {
+        background-color: #3b5372;
+        border-top: 1px #3b5372 solid;
+    }
+    /*adds border to bottom nav boxes*/
+    nav.sidebar .navbar-nav>li {
+        border-bottom: 1px #3b5372 solid;
+    }
+    /* Colors/style dropdown box*/
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    /*allows nav box to use 100% width*/
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid {
+        padding: 0 0px 0 0px;
+    }
+    /*colors dropdown box text */
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+        color: #777;
+    }
+    /*gives sidebar width/height*/
+    nav.sidebar {
+        width: 200px;
+        margin-left: -80px;
+        float: left;
+        z-index: 8000;
+        margin-bottom: 0px;
+    }
+    /*give sidebar 100% width;*/
+    nav.sidebar li {
+        width: 100%;
+    }
+    /** Setting Backgound of navigation**/
+    nav.sidebar a {
+        background-color: #3b5372;
+        /*padding-right: 13px;*/
+    }
+    nav.sidebar .active>a {
+        background-color: #3b5372!important;
+        /*padding-right: 13px;*/
+    }
+    /* Move nav to full on mouse over*/
+    nav.sidebar:hover {
+        background-color: #3b5372!important;
+        margin-left: 60px;
+    }
+    /*for hiden things when navbar hidden*/
+    .forAnimate {
+        opacity: 0;
+    }
 }
 
+
 /* .....NavBar: Icon only with coloring/layout.....*/
+
+
 /*small/medium side display 768px*/
 
 @media (min-width: 768px) {
@@ -141,35 +148,32 @@ nav.sidebar,
         /*margin-left: 40px;*/
         float: right;
     }
-
     /*Center Brand*/
-    nav.sidebar.navbar.sidebar>.container .navbar-brand,
-    .navbar>.container-fluid .navbar-brand {
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
         margin-left: 0px;
     }
     /*Center Brand*/
-    nav.sidebar .navbar-brand,
-    nav.sidebar .navbar-header {
-      background-color: #3b5372;
-      text-align: center;
-      width: 100%;
-      margin-left: 0px;
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header {
+        background-color: #3b5372;
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
     }
     /*Center Icons*/
     nav.sidebar a {
-      background-color: #3b5372;
+        background-color: #3b5372;
         /*padding-right: 13px;*/
     }
     nav.sidebar a:hover {
-      background-color: #3b5372!important;
+        background-color: #3b5372!important;
         /*padding-right: 13px;*/
     }
     nav.sidebar .active>a {
-      background-color: #3b5372!important;
-      padding-left: 25px;
+        background-color: #3b5372!important;
+        padding-left: 25px;
     }
     nav.sidebar .active>a:hover {
-      background-color: #3b5372!important;
+        background-color: #3b5372!important;
         /*padding-right: 13px;*/
     }
     /*adds border top to first nav box */
@@ -192,8 +196,7 @@ nav.sidebar,
         box-shadow: none;
     }
     /*allows nav box to use 100% width*/
-    nav.sidebar .navbar-collapse,
-    nav.sidebar .container-fluid {
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid {
         padding: 0 0px 0 0px;
     }
     /*colors dropdown box text */
@@ -211,7 +214,6 @@ nav.sidebar,
     nav.sidebar li {
         width: 100%;
     }
-
     /*for hiden things when navbar hidden*/
     .forAnimate {
         opacity: 0;
@@ -277,7 +279,6 @@ nav.sidebar,
 }
 
 @media(min-width:768px) {
-
     #wrapper.toggled #sidebar-wrapper {
         width: 0;
     }
@@ -401,7 +402,6 @@ nav.sidebar,
         position: relative!important;
         /*margin-top: -65px!important;*/
     }
-
     #wrapper {
         position: relative!important;
     }
@@ -516,9 +516,11 @@ nav.sidebar,
     }
 }
 
+
 /*#emp-profile {
     position: fixed;
 }*/
+
 
 /*#wrapper {
     margin-top: 203px;
@@ -643,107 +645,111 @@ nav.sidebar,
     white-space: nowrap;
     margin-left: 55px;
 }
+
+
 /*=====adding=====*/
- #personalData{
-            margin-top: 0px;
-            height: 275px;
- }
-@media(max-width:768px){
-    #formsize{
-  overflow-y: scroll;
-     height: 320px;
-    margin-top: 10px;
- }
 
- #personalData{
-             margin-left: 80px;
- }
-
-}
-.table-condensed>tbody>tr>td{
-    padding:0px!important;
-}
-#emp-profile{
-    overflow:hidden;
+#personalData {
+    margin-top: 0px;
+    height: 275px;
 }
 
-.editable-empty{
+@media(max-width:768px) {
+    #formsize {
+        overflow-y: scroll;
+        height: 320px;
+        margin-top: 10px;
+    }
+    #personalData {
+        margin-left: 80px;
+    }
+}
+
+.table-condensed>tbody>tr>td {
+    padding: 0px!important;
+}
+
+#emp-profile {
+    overflow: hidden;
+}
+
+.editable-empty {
     font-style: italic;
-    color:#3B5372!important;
+    color: #3B5372!important;
     text-decoration: none
 }
 
-
-
-@media(max-width:468px){
-    #emp-info{
-    margin-top: 1px;
-    margin-left: 0px;
-}
-#emp-profile{
-    top: 45px;
-    padding-top: 20px;
-}
-#line{
-    top: 530px;
-    margin-top: 0px!important;
-}
-#emp-image{
-    margin-left:60px!important;
-}
-#emp-personal td:nth-child(2){
-    padding-left: 70px!important;
-}
-#emp-company td:nth-child(2){
-    padding-left: 10px!important;
-}
+@media(max-width:468px) {
+    #emp-info {
+        margin-top: 1px;
+        margin-left: 0px;
+    }
+    #emp-profile {
+        top: 45px;
+        padding-top: 20px;
+    }
+    #line {
+        top: 530px;
+        margin-top: 0px!important;
+    }
+    #emp-image {
+        margin-left: 60px!important;
+    }
+    #emp-personal td:nth-child(2) {
+        padding-left: 70px!important;
+    }
+    #emp-company td:nth-child(2) {
+        padding-left: 10px!important;
+    }
 }
 
-#icon{
-    width:10px;
-
-
+#icon {
+    width: 10px;
     border: 0px solid transparent!important;
 }
 
-#menu-toggle .btn-default:hover{
+#menu-toggle .btn-default:hover {
     border: 0px solid transparent!important;
     background-color: #FFFFFF!important;
 }
-#menu-toggle .btn-default:active{
+
+#menu-toggle .btn-default:active {
     border: 0px solid transparent!important;
     background-color: #FFFFFF!important;
 }
-#menu-toggle .btn{
-        padding: 6px 6px!important;
-        border: 0px solid transparent!important;
-        background-color: #FFFFFF!important;
+
+#menu-toggle .btn {
+    padding: 6px 6px!important;
+    border: 0px solid transparent!important;
+    background-color: #FFFFFF!important;
 }
+
 .selected {
     border-bottom: solid 2px #3B5372;
-  }
+}
 
-  .navbar-default .navbar-nav>.active>a{
-      background-color: transparent!important;
-  }
-#padrow{
+.navbar-default .navbar-nav>.active>a {
+    background-color: transparent!important;
+}
+
+#padrow {
     margin-top: 0px;
 }
 
-#dashrow{
-          margin-left: 15px!important;
+#dashrow {
+    margin-left: 15px!important;
     margin-right: -100px!important;
-  }
+}
+
+#emp-name {
+    color: #3B5372;
+    font-weight: bold;
+    font-family: Ionicons;
+    font-size: 20px;
+}
 
 
-  #emp-name{
-      color:#3B5372;
-      font-weight:bold;
-      font-family:Ionicons;
-      font-size:20px;
-  }
-
-  /*#emp-id{
+/*#emp-id{
       color:#3B5372;
       font-weight:bold;
   }*/
