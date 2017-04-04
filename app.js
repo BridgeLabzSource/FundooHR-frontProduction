@@ -176,6 +176,21 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
             resolve: {
                 loginRequired: loginRequired
             }
+        })
+        .state('attendance.fallout', {
+            url: '/fallout',
+            templateUrl: 'templates/showFallout.html',
+            controller : 'falloutLeaveCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        }).state('attendance.leave', {
+            url: '/leavesummary',
+            templateUrl: 'templates/unmarkedEmp.html',
+            controller : 'falloutLeaveCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
         });
 
 }).run(function ($rootScope, $state) {

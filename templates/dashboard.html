@@ -7,10 +7,21 @@
             <div class="card" id="key">
                 <div class="header">
                     <h4 class="text">{{split(key)}}
-                        <span class="card-action1"><a ui-sref="attendance.month"><img class="toc1"
-                                                                                      src="images/summary.png"/>
-                            </img></a>
-                        <span class="tooltiptext">view {{split(key)}} </span>
+                        <span class="card-action1" ng-if="key=='attendanceSummary'">
+                            <a ui-sref="attendance.month">
+                                <img class="toc1" src="images/summary.png">
+                            </a>
+                            <span class="tooltiptext">view {{split(key)}} </span>
+                        </span><span class="card-action1" ng-if="key=='attendanceFallout'">
+                            <a ui-sref="attendance.fallout">
+                                <img class="toc1" src="images/summary.png">
+                            </a>
+                            <span class="tooltiptext">view {{split(key)}} </span>
+                        </span><span class="card-action1" ng-if="key=='leaveSummary'">
+                            <a ui-sref="attendance.month">
+                                <img class="toc1" src="images/summary.png">
+                            </a>
+                            <span class="tooltiptext">view {{split(key)}} </span>
                         </span>
                     </h4>
                 </div>
