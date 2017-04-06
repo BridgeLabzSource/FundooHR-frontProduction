@@ -8,10 +8,8 @@ angular.module('mainApp').controller('homeCtrl', function ($scope, $location, $s
         }
         $auth.logout()
             .then(function () {
-                toastr.info('You have been logged out');
                 $state.go('login');
             }).catch(function (error) {
-            toastr.error(error.data.message, error.status);
         });
     };
     $scope.today = new Date();
