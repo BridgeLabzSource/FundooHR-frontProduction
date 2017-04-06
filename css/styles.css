@@ -848,13 +848,13 @@ and (max-device-width : 1024px) {
 
 .yes {
     border: 1px solid #6FB8D9;
-    background-color: white;
-    color: #6FB8D9;
+    background-color: #6FB8D9;
+    color: white;
     width: 70px;
 
 }
 
-.cancel:hover , .yes:hover {
+.cancel:hover {
     background-color: #6FB8D9;
     color: white;
 }
