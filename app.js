@@ -1,4 +1,4 @@
-var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'LocalStorageModule', 'satellizer', 'toastr', 'xeditable']);
+var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'LocalStorageModule', 'satellizer', 'ngDialog', 'xeditable']);
 
 mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
 
@@ -94,18 +94,6 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
                 loginRequired: loginRequired
             }
         })
-        // .state('details', {
-        //     url: '/details/:engineerId',
-        //     views: {
-        //         nav: {
-        //             templateUrl: 'templates/home.html'
-        //         },
-        //         home: {
-        //             templateUrl: 'templates/engineer/engineer.html',
-        //             controller: 'engineerCtrl'
-        //         }
-        //     }
-        // })
         .state('engineer.engineerData.personal', {
             url: '/personal',
             templateUrl: 'templates/engineer/personal.html',
@@ -184,9 +172,10 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $aut
             resolve: {
                 loginRequired: loginRequired
             }
-        }).state('attendance.leave', {
+        })
+        .state('attendance.leave', {
             url: '/leavesummary',
-            templateUrl: 'templates/unmarkedEmp.html',
+            templateUrl: 'templates/showLeaveSummary.html',
             controller : 'falloutLeaveCtrl',
             resolve: {
                 loginRequired: loginRequired

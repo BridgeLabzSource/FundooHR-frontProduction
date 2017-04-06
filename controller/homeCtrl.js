@@ -1,4 +1,4 @@
-angular.module('mainApp').controller('homeCtrl', function ($scope, $location, $stateParams, $state, $auth, toastr, localStorageService) {
+angular.module('mainApp').controller('homeCtrl', function ($scope, $location, $stateParams, $state, $auth, localStorageService) {
     $scope.isAuth = function () {
         return $auth.isAuthenticated();
     };

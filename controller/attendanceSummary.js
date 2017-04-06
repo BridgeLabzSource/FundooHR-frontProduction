@@ -5,5 +5,5 @@
  *@param {function} selfInvoked- dependencies are added in it
  */
 angular.module('mainApp').controller('attendanceSummaryCtrl', function ($scope,$auth,restService,$state) {
-    $state.go('attendance.month');
+
 });

@@ -4,7 +4,7 @@
  *@param {string} dashCtrl - parameter refers to the controller used by HTML element
  *@param {function} selfInvoked- dependencies are added in it
  */
-angular.module('mainApp').controller('dashboardCtrl', function ($scope,restService) {
+angular.module('mainApp').controller('dashboardCtrl', function ($scope,restService,$location) {
     var dash_timeStamp = new Date().getTime();
     console.log(dash_timeStamp);
     $scope.dashBoardData=hrDashData.dashBoardData;
@@ -30,4 +30,7 @@ angular.module('mainApp').controller('dashboardCtrl', function ($scope,restServi
         return key.charAt(0).toUpperCase() + key.slice(1);
     };
 
+    $scope.go = function () {
+        $location.path('/attendance/fallout');
+    }
 });

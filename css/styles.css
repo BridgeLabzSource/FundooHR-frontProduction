@@ -814,7 +814,65 @@ and (max-device-width : 1024px) {
     margin-left: 1%;
 }
 
-@media (max-width: 760px) {
+.noemployee {
+    margin-top: 10%;
+    text-align: center;
+    color: darkgray;
+}
+.noemployee > h2 {
+    font-weight: bolder;
+}
+
+.modal-body{
+    text-align: center;
+}
+
+.modal-dialog {
+    width: 35%;
+    margin-top: 15%;
+}
+
+.modal-content{
+    border: 2px solid #6FB8D9;
+    color: #6FB8D9;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px;
+}
+
+.cancel {
+    border: 1px solid #6FB8D9;
+    background-color: white;
+    width: 70px;
+}
+
+.yes {
+    border: 1px solid #6FB8D9;
+    background-color: white;
+    color: #6FB8D9;
+    width: 70px;
+
+}
+
+.cancel:hover , .yes:hover {
+    background-color: #6FB8D9;
+    color: white;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 4px 10px gray;
+    font-family: MyriadPro-Light;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+email-alert:hover {
+    cursor: hand;
+}
+
+@media (max-width: 800px) {
     .symbol2 {
         margin-right: -20px;
     }
@@ -832,11 +890,15 @@ and (max-device-width : 1024px) {
         margin-top: 110px;
 
     }
+    .modal-dialog {
+        width: 60%;
+        margin-top: 25%;
+    }
 
 
 }
 
-@media (max-width: 320px) {
+@media (max-width: 414px) {
     .dateFallout > h3{
         font-weight: 800;
         font-size: 18px;
@@ -849,5 +911,12 @@ and (max-device-width : 1024px) {
     .cardEmp {
         margin-left: -10%;
     }
+    .modal-dialog {
+        width: 90%;
+        margin-top: 35%;
+        left: 2.5%;
+    }
 }
+
+
 

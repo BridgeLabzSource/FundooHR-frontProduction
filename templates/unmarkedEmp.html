@@ -2,8 +2,10 @@
         <span class="glyphicon glyphicon-menu-left pull-left symbol1" style="color:rgba(59, 83, 114, 1);position: absolute" ng-click="previous()"></span>
         <span class="dateFallout"
               style="color:rgba(59, 83, 114, 1);position: absolute;left:45%"><h3>{{date}}</h3></span>
-        <span class="glyphicon glyphicon-envelope pull-right symbol2"
-              style="color:rgba(59, 83, 114, 1);position: absolute;right:0;font-size: 20px;" ng-click=""></span>
+        <span class="symbol2"
+              style="color:rgba(59, 83, 114, 1);position: absolute;right:0;font-size: 20px;">
+            <email-alert type="sendEmailToUnmarkedEmployee"></email-alert>
+        </span>
 </div>
 <div class="row countline">
     <span class="unmarkCount">
@@ -15,4 +17,3 @@
         <card-info data="info"></card-info>
     </div>
 </div>
-
