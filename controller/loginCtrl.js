@@ -20,12 +20,12 @@ angular.module('mainApp').controller('loginCtrl', function ($scope, $state, $aut
         $scope.dataLoading = true;
         $("#pwd-label").css("color", "#3B5372");
         $("#password").css("borderColor", "#3B5372");
-        localStorageService.set('user', $scope.user.emailId);
+        localStorageService.set('user', $scope.user.username);
         var config={ method: 'POST', url: restService.baseUrl+'login' }; //Creating the Configuration Object for satelizer
         $auth.login($scope.user,config) //satelizer service method call
             .then(function (data) {
                 if (data.status == 200) {
-                    localStorageService.set("token", data.data);//response data is stored in localStorageService
+                    localStorageService.set("token", data.data.token);//response data is stored in localStorageService
 
                     $state.go('dashboard');
                 }

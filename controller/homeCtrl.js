@@ -9,6 +9,7 @@ angular.module('mainApp').controller('homeCtrl', function ($scope, $location, $s
         $auth.logout()
             .then(function () {
                 $state.go('login');
+                localStorageService.clearAll();
             }).catch(function (error) {
         });
     };
