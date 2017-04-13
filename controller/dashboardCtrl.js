@@ -18,6 +18,7 @@ angular.module('mainApp').controller('dashboardCtrl', function ($scope,restServi
     // restService call for Dashboard data..
     // var promise = restService.httpRequest('readDashboardData', query,"get");
 
+
     // promise.then(function (data) {
     //     var dashData = data.data;
     //     $scope.dashData = dashData;
