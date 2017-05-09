@@ -4,12 +4,13 @@ angular.module('mainApp').service('restService', function ($http, $log, $q, loca
 
     //    function for httpRequest for all methods
     this.httpRequest = function (path, data,method) {
-      var token = localStorageService.get('token').token;
+      var token = localStorageService.get('token');
+      console.log(token);
         var deferred = $q.defer();
         var httpObj = {
             method: method,
             url: self.baseUrl + path,
-            headers: {'x-token': token}
+            headers: {'x-access-token': token}
         };
         if(method==="get" || method === "GET")
         httpObj.params=data;

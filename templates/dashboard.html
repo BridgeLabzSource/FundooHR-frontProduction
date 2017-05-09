@@ -1,9 +1,15 @@
 <div class="dash" ng-init="dashPage()">
-    <div class="row">
+
+    <div class="addEmployee pull-right" ng-click="addEmployee()">
+        <img src="../images/addPersona1px.png">
+        <span class="tooltiptext">Create Employee</span>
+    </div>
+
+    <div class="row dashrow">
         <!-- Card Projects -->
         <!--{{dashData}}-->
         <div class="col-sm-6  col-md-4 col-xs-12" id="column" ng-repeat="(key,value) in dashData"
-             ng-if="key!=='timeStamp'">
+             ng-if="key!=='timeStamp' || key!=='message' || key!=='status'">
             <div class="card" id="key">
                 <div class="header">
                     <h4 class="text">{{split(key)}}
@@ -80,3 +86,29 @@
             </div>
         </div>
     </div>
+
+    <!--Add Employee Form -->
+    <script type="text/ng-template" id="addEmployee">
+        <br>
+        <div>
+            <h4 class="title">Add New Employee</h4>
+        </div>
+        <form name="addEmployee" method="post" ng-submit="createEmployee()" role="form">
+            <div class="row ro">
+                <div class="employeeText" ng-repeat="i in values">
+                    <div class="col-md-6">
+                        <text>{{i}}</text>
+                        <input ng-if="i=='Email Address'" class="form-control textarea" type="text" ng-model="employee[giveEmployee(i)]" placeholder="{{i}}" required/>
+                        <input ng-if="i!='Email Address'" class="form-control textarea" type="text" ng-model="employee[giveEmployee(i)]" placeholder="{{i}}"/>
+                    </div>
+                </div>
+                <br>
+                <div class="submitBtn">
+                    <button class="btn btn-info" ng-disabled="addEmployee.$invalid" type="submit">Create</button>
+                </div>
+            </div>
+        </form>
+    </script>
+
+</div>
+

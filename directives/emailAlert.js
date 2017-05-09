@@ -10,7 +10,7 @@ angular.module("mainApp").directive("emailAlert", function () {
             type : '@'
         },
         templateUrl: 'templates/emailAlertPopup.html',
-        controller: function ($scope, restService,ngDialog,$timeout) {
+        controller: function ($scope, restService, ngDialog, $timeout) {
             console.log('inside directive data ');
             console.log('hello');
             var query = { timeStamp : new Date().getTime() };

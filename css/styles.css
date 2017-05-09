@@ -10,6 +10,7 @@ body{
     background-color: white;
     background-size: cover;
 }
+
 #login-page{
     height:100%;
     width: 100%;
@@ -337,6 +338,11 @@ and (max-device-width : 1024px) {
     cursor: pointer;
     box-shadow: 1px 1px 4px 2px gray;
 }
+
+.dashrow {
+    padding-bottom : 30px;
+}
+
 .text {
     opacity: 100;
     text-align: left;
@@ -478,6 +484,40 @@ and (max-device-width : 1024px) {
     font-weight: bold;
     letter-spacing: 0.5px;
 }
+.ro{
+    text-align: left;
+}
+
+.submitBtn {
+    float: right;
+    margin-right: 18px;
+}
+
+.addEmployee .tooltiptext{
+    visibility: hidden;
+    width: 162px;
+    height: 27px;
+    background-color: rgba(4, 4, 4, 0.59);
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    border-radius: 6px;
+    margin:10px;
+    padding: 5px 0;
+    font-size:12px;
+    font-weight: 300;
+    vertical-align: middle;
+    line-height: 15px;
+    margin-left:-190px;
+    margin-top: -5px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.addEmployee:hover .tooltiptext{
+    visibility: visible;
+}
+
 .card-action1 .tooltiptext {
     visibility: hidden;
     width: 162px;
@@ -872,7 +912,52 @@ email-alert:hover {
     cursor: hand;
 }
 
+.addEmployee {
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.textarea{
+    border-radius: 0;
+    height: 3em;
+    margin-bottom: 1em;
+}
+
+.ngdialog-theme-default .ngdialog-close{
+    border: none;
+    background-color: transparent;
+    height: 30px;
+    width : 30px;
+}
+
+.title{
+    font-weight: bold;
+}
+.ngdialog {
+    top : -100px;
+}
+
+.btn-info {
+    margin-top: 10px;
+    border-radius: 0;
+    height: 3em;
+    width: 7em;
+    font-weight: bolder;
+}
+
+text{
+    font-size: 10px;
+}
+
+@media (min-width: 801px) {
+    .employeeText {
+        margin-top: -30px;
+    }
+}
 @media (max-width: 800px) {
+    .title{
+        margin-bottom: 40px;
+    }
     .symbol2 {
         margin-right: -20px;
     }
@@ -899,6 +984,10 @@ email-alert:hover {
 }
 
 @media (max-width: 414px) {
+    .title{
+        margin-bottom: 40px;
+    }
+
     .dateFallout > h3{
         font-weight: 800;
         font-size: 18px;
@@ -916,7 +1005,12 @@ email-alert:hover {
         margin-top: 35%;
         left: 2.5%;
     }
+
+    .dash {
+        padding-top: 40px;
+    }
 }
+
 
 
 
