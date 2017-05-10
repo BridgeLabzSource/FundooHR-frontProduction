@@ -1,6 +1,6 @@
 <div class="dash" ng-init="dashPage()">
 
-    <div class="addEmployee pull-right" ng-click="addEmployee()">
+    <div class="addEmployee pull-right" ng-click="createEmployee()">
         <img src="../images/addPersona1px.png">
         <span class="tooltiptext">Create Employee</span>
     </div>
@@ -62,6 +62,20 @@
                         <div class="lSummary-date">{{previous|date:"dd MMMM yyyy"}}</div>
                     </center>
                 </div>
+                <div ng-if="key=='newlyAddedEmployee'" id="dash-newlyAddedEmployee">
+                    <center>
+                        <div class="row rowAdd">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="newCount">{{value.newAdded}}</div>
+                                <div class="addText">New Added</div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="newCount">{{value.toVefiry}}</div>
+                                <div class="addText">To Verify</div>
+                            </div>
+                        </div>
+                    </center>
+                </div>
             </div>
         </div>
 
@@ -93,13 +107,13 @@
         <div>
             <h4 class="title">Add New Employee</h4>
         </div>
-        <form name="addEmployee" method="post" ng-submit="createEmployee()" role="form">
+        <form name="addEmployee" method="post" ng-submit="addEmployeeDetails()" role="form">
             <div class="row ro">
                 <div class="employeeText" ng-repeat="i in values">
                     <div class="col-md-6">
                         <text>{{i}}</text>
-                        <input ng-if="i=='Email Address'" class="form-control textarea" type="text" ng-model="employee[giveEmployee(i)]" placeholder="{{i}}" required/>
-                        <input ng-if="i!='Email Address'" class="form-control textarea" type="text" ng-model="employee[giveEmployee(i)]" placeholder="{{i}}"/>
+                            <input ng-if="i=='Email Address'" name="emailAddress" type="email" class="form-control textarea" ng-model="employee[giveEmployee(i)]" placeholder="admin@bridgelabz.com" required/>
+                            <input ng-if="i!='Email Address'" class="form-control textarea" type="text" ng-model="employee[giveEmployee(i)]" placeholder="{{i}}"/>
                     </div>
                 </div>
                 <br>
