@@ -1,6 +1,6 @@
 <html>
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=100%, initial-scale=1.0">
     <meta charset="utf-8">
     <title> FundooHr </title>
@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css">
     <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css">
     <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-plain.css">
     <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-custom-width.css">
+    <link rel="stylesheet" href="assets/ngPopover/ngPopover.css">
     <link rel="stylesheet" href="https://rawgit.com/cletourneau/angular-bootstrap-datepicker/master/dist/angular-bootstrap-datepicker.css">
 
     <link rel="stylesheet" href="css/font.css">
@@ -49,6 +49,7 @@
 <script src="bower_components/moment/moment.js" charset="utf-8"></script>
 <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
 <script src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
+<script src="assets/ngPopover/ngPopover.min.js"></script>
 
 
 <script src="app.js"></script>
@@ -86,5 +87,9 @@
 <script src="directives/emailAlert.js"></script>
 
 <script src="config.js"></script>
-
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
 </html>

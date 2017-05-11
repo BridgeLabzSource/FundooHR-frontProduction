@@ -43,7 +43,6 @@ angular.module('mainApp').controller('dashboardCtrl', function ($scope, restServ
             className: 'ngdialog-theme-default',
             scope: $scope,
             overlay: true,
-            width: '80%',
             showClose: true
         });
     };
@@ -87,9 +86,14 @@ angular.module('mainApp').controller('dashboardCtrl', function ($scope, restServ
         });
         $scope.employee = {};
     };
+
+    /* popover to show newly added employees */
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+    });
+
     /*jQuery for showing datepicker*/
     $('#sandbox-container input').datepicker({
         autoclose: true
     });
-
 });

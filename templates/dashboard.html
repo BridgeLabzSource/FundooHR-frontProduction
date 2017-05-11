@@ -66,11 +66,16 @@
                     <center>
                         <div class="row rowAdd">
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <div class="newCount">{{value.newAdded}}</div>
+                                <button class="newCount" title="Dismissible popover" data-container="body" data-toggle="popover" data-trigger="focus" data-content="Click anywhere in the document to close this popover">
+                                    {{value.newAdded.count}}
+                                </button>
+                                <button type="button" class="btn btn-default btn-danger" data-container="body" data-toggle="popover" data-placement="top" title="Popover Top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                    Popover on top
+                                </button>
                                 <div class="addText">New Added</div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <div class="newCount">{{value.toVefiry}}</div>
+                                <div class="newCount">{{value.toVefiry.count}}</div>
                                 <div class="addText">To Verify</div>
                             </div>
                         </div>
@@ -112,7 +117,7 @@
                 <div class="employeeText" ng-repeat="i in values">
                     <div class="col-md-6">
                         <text>{{i}}</text>
-                            <input ng-if="i=='Email Address'" name="emailAddress" type="email" class="form-control textarea" ng-model="employee[giveEmployee(i)]" placeholder="admin@bridgelabz.com" required/>
+                            <input ng-if="i=='Email Address'" name="emailAddress" type="email" class="form-control textarea" ng-model="employee[giveEmployee(i)]" placeholder="e.g. someone@domain.com" required/>
                             <input ng-if="i!='Email Address'" class="form-control textarea" type="text" ng-model="employee[giveEmployee(i)]" placeholder="{{i}}"/>
                     </div>
                 </div>
@@ -125,4 +130,5 @@
     </script>
 
 </div>
+
 

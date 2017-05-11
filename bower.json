@@ -30,6 +30,7 @@
     "font-awesome": "^4.7.0",
     "moment": "^2.17.1",
     "satellizer": "^0.15.5",
-    "ng-dialog": "^1.0.1"
+    "ng-dialog": "^1.0.1",
+    "ngPopover": "^0.0.19"
   }
 }

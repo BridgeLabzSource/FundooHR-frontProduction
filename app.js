@@ -1,4 +1,4 @@
-var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'LocalStorageModule', 'satellizer', 'ngDialog', 'xeditable']);
+var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'LocalStorageModule', 'satellizer', 'ngDialog', 'ngPopover', 'xeditable']);
 
 mainApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
 

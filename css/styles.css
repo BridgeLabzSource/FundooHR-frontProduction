@@ -485,9 +485,10 @@ and (max-device-width : 1024px) {
     letter-spacing: 0.5px;
 }
 .ro{
+    margin-top: 2.5em;
     text-align: left;
-    padding-left: 7px;
-    padding-right: 7px;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 .rowAdd{
@@ -512,6 +513,9 @@ and (max-device-width : 1024px) {
 .newCount {
     font-size: 55px;
     color : #2aabd2;
+    font-weight: 500;
+    background-color: transparent;
+    border: none;
 }
 
 .addEmployee .tooltiptext{
@@ -930,6 +934,7 @@ and (max-device-width : 1024px) {
     font-family: MyriadPro-Light;
     font-weight: bold;
     font-size: 18px;
+    width : 70%;
 }
 
 email-alert:hover {
@@ -955,10 +960,17 @@ email-alert:hover {
 }
 
 .title{
+    color : #2aabd2;
     font-weight: bold;
+    margin-top: -10px;
 }
 .ngdialog {
     top : -100px;
+}
+
+.ngdialog-content {
+    border: 2px solid #2aabd2;
+    box-shadow: 0px 5px 10px gray;
 }
 
 .btn-info {
@@ -973,11 +985,30 @@ text{
     font-size: 10px;
 }
 
+.popover {
+    width : 250px;
+}
+
 @media (min-width: 801px) {
     .employeeText {
         margin-top: -30px;
     }
 }
+
+@media (min-width: 801px) and (max-width : 980px) {
+    .ngdialog.ngdialog-theme-default .ngdialog-content {
+        width : 55%
+    }
+
+    .textarea {
+        margin-bottom: 2.5em;
+    }
+
+    .submitBtn {
+        margin-top: -2em;
+    }
+}
+
 @media (max-width: 800px) {
     .title{
         margin-bottom: 40px;
@@ -1003,7 +1034,9 @@ text{
         width: 60%;
         margin-top: 25%;
     }
-
+    .ngdialog.ngdialog-theme-default .ngdialog-content {
+        width : 60%
+    }
 
 }
 
@@ -1032,6 +1065,10 @@ text{
 
     .dash {
         padding-top: 40px;
+    }
+
+    .ngdialog.ngdialog-theme-default .ngdialog-content {
+        width : 90%
     }
 }
 
