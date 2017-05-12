@@ -989,6 +989,32 @@ text{
     width : 250px;
 }
 
+.ngdialog.ngdialog-theme-default .ngdialog-content .newAdd{
+    margin-top: 30%;
+}
+.newAddList h4{
+    font-weight: bold;
+    color: #00b3ee;
+    margin-bottom: 1em;
+}
+
+.newAddList table{
+    width: 100%;
+}
+
+.newNameTable{
+    border-collapse:separate;
+    border-spacing:0.5em;
+}
+/*.newName{*/
+    /*font-weight: bold;*/
+/*}*/
+
+.grayStatus{
+    font-size: 11px;
+    color: red;
+}
+
 @media (min-width: 801px) {
     .employeeText {
         margin-top: -30px;

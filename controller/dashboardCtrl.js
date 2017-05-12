@@ -6,6 +6,7 @@
  */
 angular.module('mainApp').controller('dashboardCtrl', function ($scope, restService, $location, ngDialog) {
     var dash_timeStamp = new Date().getTime();
+
     $scope.dashBoardData = hrDashData.dashBoardData;
 
     // dashboard initialization
@@ -85,6 +86,17 @@ angular.module('mainApp').controller('dashboardCtrl', function ($scope, restServ
 
         });
         $scope.employee = {};
+    };
+
+    $scope.shownewAdd = function (data) {
+        $scope.data = data;
+        ngDialog.open({
+            template: 'shownewEmployee',
+            className: 'ngdialog-theme-default',
+            scope: $scope,
+            overlay: true,
+            showClose: true
+        });
     };
 
     /* popover to show newly added employees */

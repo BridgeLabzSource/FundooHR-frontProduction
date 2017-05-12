@@ -66,10 +66,9 @@
                     <center>
                         <div class="row rowAdd">
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <button class="newCount">
+                                <button class="newCount" ng-click="shownewAdd(value.newAdded.data)">
                                     {{value.newAdded.count}}
                                 </button>
-
                                 <div class="addText">New Added</div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
@@ -126,5 +125,21 @@
             </div>
         </form>
     </script>
+
+
+    <script type="text/ng-template" id="shownewEmployee" class="newAdd">
+        <div class="newAddList">
+            <h4>New Added Employees</h4>
+            <table class="newNameTable">
+                <tr ng-repeat="i in data">
+                    <td class="newName">{{i.emailAddress}}</td>
+                    <td class="grayStatus pull-right">
+                        <a ng-if="i.status=='NOT STARTED'">EDIT</a>&nbsp;&nbsp;<span style="color: black">|</span>&nbsp;&nbsp;{{i.status}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </script>
+
 
 </div>
