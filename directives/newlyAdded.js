@@ -7,9 +7,9 @@ angular.module("mainApp").directive("newlyAdded", function () {
     return {
         restrict: "EA",
         scope : {
-            src : '='
+            srcData : '='
         },
-        template: '',
+        template: '<h3>{{src}}</h3>',
         controller: function (scope, restService, ngDialog, $timeout) {
             console.log('new added employees - ',scope.src);
         }
