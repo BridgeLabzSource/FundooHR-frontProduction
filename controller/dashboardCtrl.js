@@ -92,8 +92,4 @@ angular.module('mainApp').controller('dashboardCtrl', function ($scope, restServ
         $('[data-toggle="popover"]').popover();
     });
 
-    /*jQuery for showing datepicker*/
-    $('#sandbox-container input').datepicker({
-        autoclose: true
-    });
 });
