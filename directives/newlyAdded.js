@@ -3,7 +3,7 @@
  * CreatedBy: Prashant Praveen
 
  */
-angular.module("mainApp").directive("emailAlert", function () {
+angular.module("mainApp").directive("newlyAdded", function () {
     return {
         restrict: "EA",
         scope : {
